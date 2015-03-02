@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shared drawing board</title>
+        <meta name="description" content="Remote control your webapp with your mobile device">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="twitter:card" content="Sylvain Hellegouarch's twitter account">
+        <meta name="twitter:site" content="@lawouach">
+        <meta name="twitter:url" content="http://www.defuze.org">
+
+        <link rel="stylesheet" href="/static/demos/drawing/vendors/initializr/css/normalize.min.css">
+        <link rel="stylesheet" href="/static/demos/drawing/vendors/initializr/css/main.min.css">
+
+        <script src="/static/demos/drawing/vendors/initializr/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">shared drawing board</h1>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <section>
+                        <h2>what's this?</h2>
+	                <p>This demo will demonstrate a fun usage of <a href="http://www.websocket.org/">WebSocket<a/>
+	                   and <a href="http://diveintohtml5.info/canvas.html">canvases</a>.
+	                   The idea is that you will share a drawing board with other
+	                   users or devices and each time someone will draw something onto
+	                   the canvas, all other participants will see the drawing in near real-time
+	                   on their side too.
+	                </p>
+	                <p>Please use the link below to share a drawing board:</p>
+	                <p><a href="${baseurl}/board/${boardid}">${baseurl}/board/${boardid}</a></p>
+	                <p>Note that each board can last only 5mn as this for demoing purpose.</p>
+                    </section>
+                    <section>
+                        <h2>how does it work?</h2>
+	                <p>The link above leads you to a page which will simply display
+	                   two HTML5 canvases. One on the left acting as a simple toolbar
+	                   to change your brush color and clear the whole drawing board. The
+	                   canvas on the right is the drawing board where you can draw circles
+	                   by clicking on your left button (or your finger on a mobile device).</p>
+	                <p>In addition, in the background, a websocket connection is initialized
+	                   with the server. That connection will be used to broadcast any drawing
+	                   action you perform on your board.</p>
+	                <p>Any other connected participant will then "see" whatever you draw on your
+	                   board. Conversely, you will see what they draw as well.</p>
+	                <p>The demo is hosted on a <a href="https://www.webfaction.com">WebFaction</a>
+	                   shared host behind a Custom (websocket)
+	                   application. This kind of application sets up a nginx frontend with the
+	                   websocket module enabled. The demo simply runs a Python application listening
+                           on that port.</p>
+                        <p>Note that on your mobile, the <a href="http://www.html5rocks.com/en/tutorials/device/orientation/">device motion</a>
+                           is used whenever available. Press on the screen once and this ought
+                           to start the motion support. You will have to press again to stop it (or
+                           click on the Clean button).</p>
+	             </section>
+                    <section>
+                        <h2>where does it work?</h2>
+                        <p>This demo relies on modern browsers support for HTML5 features such as
+                           <a href="http://caniuse.com/websockets">websocket</a> and
+                           <a href="http://caniuse.com/canvas">canvas</a>.</p>
+                        <p>It has been tested successfully on:</p>
+                        <ul>
+			  <li>Chromium 33.0.1750.152</li>
+			  <li>Firefox 28</li>
+			  <li>Chrome 34.0.1847.114 on Android 4.2.2</li>
+			  <li>Opera 12</li>
+			  <li>Internet Explorer 11</li>
+			</ul>
+			<p>Note that the demo only supports <a href="https://tools.ietf.org/html/rfc6455">RFC 6455</a> which is the
+			   official version of the WebSocket protocol. Some older devices
+			   implement other draft versions that this demo does not speak.</a>
+                    <section>
+                        <h2>what tools are used for this demo?</h2>
+	                <p>This demo uses the following libraries and tools:</p>
+	                <ul>
+			  <li><a href="http://www.cherrypy.org">CherryPy</a> as the application server running on Python</li>
+			  <li><a href="https://github.com/Lawouach/WebSocket-for-Python">ws4py</a> as the websocket server endpoint</li>
+			  <li><a href="https://pypi.python.org/pypi/wsaccel">wsaccel</a> which uses Cython to improve key parts of ws4py</li>
+			  <li><a href="http://calebevans.me/projects/jcanvas/">jcanvas</a> for canvas manipulation and rendering</li>
+			  <li><a href="http://www.initializr.com/">Initializr</a> for the HTML5 web page that you see</li>
+			</ul>
+	                <p>The source code of this demo can be found <a href="https://github.com/Lawouach/WebSocket-for-Python/tree/master/example/websensors">here</a>
+			   as part of the ws4py package.</p>
+		    </section>
+                </article>
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <p>&copy; 2014 | <a href="http://www.defuze.org/">Sylvain Hellegouarch</a></p>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </body>
+</html>
