@@ -1,0 +1,115 @@
+
+* [2015-01-20 mar]
+
+Se debe sentir como desde el sumario se prepara a las personas para poder abordar los temas de los siguientes titulos de una manera más adecuada, se muestra un tipo de problematica o situación que puede ser trabajada con los temas que se ven subsecuentemente
+
+** Prefacio
+
+- El prefacio debe ser un overview de los temas que se van a analizar en el resto del capitulo, así que se debe hacer un mapa de todos los temas que se tienen
+- En la introducción quiero hablar acerca de tres temas muy importantes, primero el nacimiento y crecimiento de las tecnologías web, tal vez surgen como una necesidad para 
+
+* [2015-01-20 mar]
+
+Puedo estar escribiendo o mejorando lo que llevo escrito, 
+
+Las tecnologías web han sido utilizadas en grandes cosas y de muchas maneras diferentes convirtiendose en un estandar en la creación de aplicación
+
+La tecnología evolucionó no solo para mejorar la creación de páginas web sino como una herramienta muy útil para la creación de aplicaciones
+
+Muchas tecnologías fueron añadidas para que la tecnología web pudiera ser utilizada para la creación de aplicaciones
+
+Se ha explorado el uso de esta tecnología como herramienta para la creación de aplicaciones, en el desarrollo de plataformas para herramientas de oficina, dibujo, entre muchas otras, demostrando un gran potencial.
+
+Se tienen grandes ventajas en el uso de está tecnología y razón por la que se han creado estas aplicaciones, se pueden utilizar en muchas plataformas diferentes, se puede tener acceso a servicios completos que conecten sistemas, 
+
+Sin embargo su uso en proyectos de robótica a pesar de demostrar tener muchas ventajas ha sido limitado
+
+---------
+
+** En la introducción se deben colocar los términos y cosas para poder estar hablando todos el mismo idioma en cuanto a lo que se va a discutir
+
+En el caso de este trabajo las partes clave son sobre las tecnologías web en primer lugar, 
+
+- Que, es la tecnología web, sus inicios, como ha ido evolucionando
+- Que alcances puede tener
+
+Nuevos alcances sobre interfaces modernas
+
+- El uso de estás herramientas puede permitir la creación de interfaces modernas y dinámicas par el control de los robots
+- Las interfaces buscan que la informacion esté disponible para las personas de manera eficientes
+
+En segundo lugar la aplicación de esta tecnología en la robótica
+
+- Estado del arte de las interfaces en los robots
+- Como puede apoyar en la creación de interfaces para la creacion de robots
+- Qué necesitan los robots para poder comunicarse con una interfaz
+- Que limitantes y cosas necesitan los robots 
+
+** La segunda parte
+
+Conociendo la tecnología, es importante que conozcamos los alcances y formas que tiene la tecnología web, para poder aplicarla de manera adecuada en los proyectos que tengamos
+
+Se analizaran todos los detalles acerca de la tecnología, poniendo especial enfasis a algunas que especialmente pueden ayudar en la aplicación a la robótica
+
+** La tercera poarte
+
+Teniendo en cuenta la problématica y las herramientas con las que contamos para solucionar los problemas se evaluarán posibles sistemas de aplicación que pueden ayudar, seleccionando tecnologías, metodologías y procesos
+
+Se pueden analizar y tener diferentes necesidades en el proceso de desarrollo de un robot
+
+- Análisis de las necesidades de los desarrollos de robótica, descripción de las fases y difrerentes tipos de necesidades
+
+- Proponer un sistema de cosas y así
+
+** Cuarta parte
+
+Aplicando lo que se propuso en el tema anterior para tres robots diferentes y análizar cuales fueron los resultados
+
+** Conclusiones
+
+* [2015-01-12 lun]
+
+En el estado de la tesis de este momento se tiene un índice más o menos, completo donde se puede ver el mapa completo de temas. 
+
+Empezando por el título, se refiere a utilizar las interfaces web o al menos las tecnologías web en el desarrollo de interfaces para robots, para esto se tienen que análizar primero los términos y solicitudes generales que intervienen. Podemos ennumerar los siguientes:
+
+- Tecnología web
+- Robótica
+- Interfaces web
+- La parte de la aplicación de estos términos
+- Su evolución
+- El estado del arte de estas partes
+
+Como pivote principal de la discusión se tienen las interfaces en los robots, se empieza por el análisis de las interfaces para robots, tomando en cuenta las necesidades particulares que pueden tener frente a otro tipo de interfaces. Se ven algunas dificultades y problemas sobre la aplicación de estas herramientas y a las tecnologías web como una posible solución.
+
+Como pivote principal de la discusión se tiene la tecnología web y su aplicación como interfaz, Las tecnologías web han demostrado su versatilidad y alcance en los últimos años, se analiza un poco acerca de los grandes avances que ha tenido y como su aplicación en la robótica puede ser provechosa debido 
+
+
+
+* [2014-11-07 vie]
+
+El tema de la tesis a que se refiere? El el desarrollo de un sistema que pueda ayudar a la creación de interfaces para robot de una manera sencilla y moderna, que ayude a aplicar los diferentes metodologías y sistemas que se vienen desarrollando desde hace tiempo con todas las consideraciones que deben hacerse para la particularidad de la robótica
+
+Tal vez entonces no empezar con el argumento de que todas las interfaces pueden ser sino decir desde un inicio como la tecnología web es la ideal para esto 
+
+Qué es una interfaz gráfica?
+
+Las interfaces gráficas 
+
+Las computadoras
+
+* [2014-11-03 lun]
+
+En dónde me encuentro en este momento acerca de la tesis?
+
+Parece ser que tengo una idea, un poco vaga de las cosas, pero tengo alguna idea de lo que estoy haciendo,
+
+
+
+* [2014-10-13 lun]
+
+Empezando con el registro del avance de la tesis, ya tengo un poco de experiencia con esto de desarrollar temas, entonces como primeros puntos es escribir cuales son las metas y objetivos del curso, podría también buscar algunos articulos que me ayuden a trabajar en eso.
+
+El statement debe ser el inicio de la tesis, indicando cual es la problemática que se está trabajando, en mi caso es acerca de la mejora de las interfaces en las aplicaciones de robótica haciendo uso de herramientas más poderosas para este uso que vienen de otro tipo de campo
+
+Entonces se inicia con una problemática

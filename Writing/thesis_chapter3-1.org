@@ -1,0 +1,43 @@
+
+* Cápitulo 3: Conociendo las tecnologías web (propuesta de la solución)
+
+** Prefacio
+
+*** Las tecnologías web son muy variadas y existe un sin fin de herramientas diferentes para facilitar el desarrollo de aplicaciones web, sin embargo el caso especifico de las interfaces para robots tiene carácterísticas muy particulares que nos pueden ayudar a definir de una manera mas especifica que herramientas utilizar.
+
+*** 
+
+** Definición del proceso de creación de un robot
+
+*** Tomando en cuenta las necesidades específicas que pueden tener los robots son muy variadas, para el caso de este trabajo se enfocara en los desarrollo llevados a cabo en la facultad de ingeniería de la UNAM, para esto se hizo un trabajo de investigación para ver cuales eran las necesidades más importantes de los laboratorios que hacen desarrollo de 
+
+** Discusión
+
+En este capitulo se debe de tratar el análisis de la propuesta de la solución entonces primero hay que ver como es que se van a aplicar los conceptos anteiores sobre el problema que se tiene
+
+El problema, aunqu en principio no es un problema es como se deben aplicar las tecnologías web en el desarrollo de las interfaces para la robótica
+
+Se tiene por ejemplo el análisis del problema? 
+
+Esto sería, el desarrollo de robots tiene ciertas características que se necesitan cumplir en diversos aspectos, en principio se puede definir el proceso de el desarrollo de robots en varias etapas, estas etapas constan de diferentes necesidades
+
+- Etapoas de desarrollo de los robots
+  - Análisis y propuesta
+  - Diseño
+  - Construcción
+  - Pruebas iniciales de componentes independientes
+  - Pruebas de componentes en conjunto
+  - Lectura de sensores correcta
+  - Aplicación de los sistemas de control
+  - Prueba de los ssitemas de control
+  - Mandar señales de control desde la interfaz
+
+- Posibles niveles de robots
+  - Robots que solo son operados por el desarrollador
+    - robots de solo lectura de información sencilla para el usuario
+    - robots
+  - Robots que son controlados por diferentes operadores
+  - Robots operados o utilizados por todo nivel de público
+  - Robots monitoreados desde distintos niveles
+
+Es posible que se necesiten diferentes herramientas dependiendo de las necesidades especificas de cada uno de estos casos, lo que parece lógico si es que pensamos en que las necesidades de cada robot pueden ser diferentes pero tomando como base el hecho de qu elas tecnologías web son tan versátiles se puede tener todo lo que se necesite

@@ -1,0 +1,26 @@
+
+* Introducción (capitulo 1)
+
+- La tecnología web comprende muchos elementos, iniciando desde los elementos gráficos, de control de interfaces, comunicación etc. Se ha convertido 
+
+- La tecnología web tiene una historia larga y de gran importancia en el desarrollo computacional y social, empezando como una forma para poder comunicar dos equipos en una misma red hasta la creación de interfaces 
+
+- Iniciando como una forma para poder compartir datos entre diferentes computadoras nacieron las primeras tecnologías que hacen el internet, HTML, URI y HTTP.
+
+- Estemos concientes de ello o no, a pesar de que la tecnología web no a alcanzado % del uso a nivel mundial, ha logrado cambiar la forma en la que nos comunicamos, compramos, leemos, y muchas actividades
+
+- La web es algo a lo que estamos muy acostumbrados en la actualidad, la utilizamos todos los días y es considerada un pilar de la vida moderna, nos ha permitido comunicarnos de maneras más eficientes, y tener un mayor alcance ya que se está convirtiendo en un estandar tecnológico. 
+
+- Desde su creación la web ha ido mejorando para adaptarse a la evolución de la tecnología, cambiando desde el solo poder desplegar texto en una pantalla a poder crear interfaces adaptables a tipos de pantalla, 
+
+, su eficiencia, y las aplicaciones que puede tener
+
+- Sin embargo es dificil a veces poder entender esta máquina tan enorme que se ha convertido
+
+** [#A] Las tecnologías web son muy importantes, al principio estaban muy limitadas pero han evolucionado para poder estar a la par de la tecnología, su evolución está viendo en estos momentos un crecimiento acelerado ya que se  está convirtiendo en algo escencial para estar disponible a todos los usuarios que utilizan el internet. Esta necesidad significó un incremento de esfuerzos en los últimos años por hacer mas eficiente y poderosas las tecnologías web. Esto ha resultado en una notable mejora de las tecnologías web para no solo hacer páginas web sino aplicaciones completas que pueden competir con aquellas hechas de manera nativa. Es ahora cuando se está aplicacndo esta tecnología en diferentes áreas para ver los alcances que se pueden tener, juegos, simuladores, herramientas de dibujo, sistemas operativos. Nosotros como personas que desarrollan robots podemos aprovechar estas tecnologías para mejorar la forma en la que creamos interfaces para los robots.
+
+** Historia de las tecnologías web
+
+*** La web moderna consta de muchas tecnologías, algunas para la parte visual, la de contenido, la de comunicación y la dinámica, sin embargo no fue así desde un inicio, estás se han ido creando y evolucionando junto con
+
+*** Fue en 1989 cuando se hizo el primer desarrollo de la 

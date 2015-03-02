@@ -1,0 +1,15 @@
+
+* Tesis
+
+** Desarrollo de una guia de diseño
+Es importante conocer todos los elementos que son incluidos en el proceso de desarrollo de una interfaz y ver cuales son los posibles casos en los que se va a aplicar la interfaz, posibles opciones son 
+
+** Sistemas en los que se puede necesitar una interfaz para poder controlar y monitorear un robot
+
+** Como primer fase: FASE DE MONITOREO
+
+*** Cualquier robot necesita que se estén monitoreando las variables en tiempo real, en un inicio del desarrollo de un robot no es importante como se comportan las interfaces pero poder ver de una manera sencilla, flexible y rápida estas variables puede ser de gran ayuda
+
+*** El uso de sockets es el funcionamiento básico de como es que se puede comunicar alguna variable de un robot con una interfaz, en este caso se pueden utilizar sockets en cualquier lenguaje y permitir que se añadan elementos de monitoreo para utilizar la interfaz
+
+*** En este caso se puede tener un template sencillo donde de manera dinámica se puedan estar agregando estos sockets, que sería practicamente el puerto sobre el que escuchar esta información

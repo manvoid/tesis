@@ -1,0 +1,8 @@
+
+* Cápitulo 2: Conociendo las tecnologías web
+
+** Prefacio
+
+- Las tecnologías web han tenido una enorme evolución a lo largo de los años, principalmente en los últimos 10 años se ha visto un enorme incremento del uso de estas tecnologías en diversas cosas alrededor del mundo
+- Existen una infinidad de tecnologías web en la actualidad, su creciente uso y desarrollo además de su versatilidad han llevado a la comunidad a crear muchisimas herramientas y formas de trabajo para palicar estas tecnologías. A continuación veremos un desgloce de las partes más importantes que están involucradas con una aplicación web completa actual, ver las partes que pueden ser de interes y cuales con las herramientas actualmente utilizadas para estas herramientas
+- 

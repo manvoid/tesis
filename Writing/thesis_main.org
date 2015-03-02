@@ -1,0 +1,13 @@
+* Mejoras que hay que hacer a la interfaz existente
+
+** Tal vez crear una manera en la que se pueda cambiar entre las diferentes vistas del proyecto para mostrar la información adecuada
+
+** Utilizar angularjs es un gran acierto
+
+** Se podría cambiar el framework css por algo un poco más util
+
+** Tener una mejor visualización de algunas cosas
+
+** Hacer que funcione mejor para interfaces de celular y más pequeñas
+
+** Manejar objetos 3D

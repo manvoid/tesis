@@ -1,0 +1,43 @@
+
+* Prefacio
+
+** Desde que se desarrollo la primer computadora se han buscado manera efectivas y sencillas para que las personas interactuen con ellas, desde los primeros inicios en el desarrollo de estás experiencias se sabe que es importante que esta interacción se sienta natural, que necesite las intrucciones minimas posibles para que funcione, que utilice conceptos con los que el usuario este familiarizado.
+
+** Al final de cuentas es una abstracción del funcionamiento de la máquina, en lugar de utilizarla directamente en los componentes que le dan su funcionamiento se crean capas para que el usuario pueda ver y hacer las cosas que realmente necesita sin tener que preocuparse de como es que funciona internamente.
+
+** Y esta interacción esta profundamente ligada con los alcances tecnológicos que poseemos,
+
+** Actualmente el mundo está lleno de tecnología y cada día se hace más importante el cómo es que las personas interactuan con ella. Los temas de interfaz de usuario y experiencia de usuario que antes estaban considerados bajo un mismo concepto ahora se distinguen cada uno en su propio orden de importancia.
+
+** En los ultimos años se ha visto una explosión tecnologíca nunca vista en la historia de la humanidad, principalmente en el mundo digital, y con la creciente importanica que tiene . Se están creando todo el tiempo conceptos nuevos de tecnología que acercan de una manera más tranparente el mundo digital a las personas, y la forma más utilizada para poder acceder a este mundo, aunque cambiando poco a poco, son las pantallas, existen diferentes alternativas en desarrollo para poder utilizar otras formas de interaccion pero al días de hoy las pantallas son la principal forma con la que todos interactuamos y no parece que vayan a irse a ningún lado pronto. Y no es de extrañarse que poco a poco se ha ido desarrollando, mejorando e investigando sobre como hacer más eficiente la interaccion entre estos dispositivos y los usuarios, a lo que se refiere como "user interface", un tema que antes no tenía demasiada importancia pero que ahora es el tema principal de muchas investigaciones y desarrollos.
+
+** Podemos definir a una interfaz gráfica como el sistema visual por el cual un usuario interactua con un sistema de cómputo
+
+* Historia
+
+** La primer interfaz de computadora
+
+** Las primeras computadoras que existieron
+
+** La interacción y las experiencias que se pueden lograr están prfundamente ligadas al nivel tecnológico que se tiene. Por ejemplo, cuando se desarrollaron las primeras computadoras
+
+** La historia de las interfaces gráficas va de la mano de la historia de la computación, ya que las interfaces no solo son una cuestión de desarrollo teórico sino también
+
+** 
+
+** El desarrollo y evolución de las interfaces gráficas esta intimamente ligado con el desarrollo de la computación. El crear inter
+
+* Interfaz de usuario
+
+** Durante mucho tiempo este 
+
+** Cita The User Interface An Introduction and Overview
+The user interface is the most important part of any computer system. Why? It is the
+system to most users. It can be seen, it can be heard, and it can be touched. The piles of
+software code are invisible, hidden behind phosphor, keyboards, and the mouse. The
+goals of interface design are simple, to make working with a computer easy, produc-
+tive, and enjoyable.
+
+** Nueva atencion dirigida hacia la interfaz de usuario
+
+* Diferencia entre UX y UI

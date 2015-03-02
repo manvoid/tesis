@@ -1,0 +1,58 @@
+
+* Introducción a las interfaces
+
+** La historia de las interfaces está muy ligada con la computación, en gran medida porque las interfaces se ejecutan dentro de un sistema computacional
+
+** La historia de las interfaces gráficas está muy ligada a la computación ya que es en una computadora donde se ejecutan estás interfaces y por lo tanto están limitadas a las limitaciones de hardware.
+
+** Por ejemplo en los inicios 
+
+* Índice
+
+** Introducción
+
+*** La robótica ha necesitado el uso de interfaces desde hace ya un tiempo
+
+** Qué son y para que son las interfaces gráficas
+
+*** Breve historia de las interfaces gráficas
+
+**** Las interfaces gráficas son la principal manera en la que las personas interactuan con la tecnología, desde la creación de los leds y estos de alguna manera apoyando a que los desarrolladores obtuvieran información del dispositivo.
+
+**** La historia de las interfaces está muy ligada con la historia de la computación ya que la manera en la que se crean estas interfaces están limitadas a la tecnología que se tiene en el momento, por ejemplo en los inicios de la computación solo se utilizaban leds para indicar información, una vez que se desarrollo el monitor se empezaron a poder imprimir caracteres en pantalla lo que fue de gran ayuda y una de las primeras revoluciones en el uso de la interfaz, donde comenzó a utilizarse algo llamado "terminal", esta era un conducto de comunicación con la computadora utilizando palabras y comandos, este tipo de interfaz es tan básico y escencial en la computación que sigue siendo parte importante para aquellas personas que necesitan comunicarse con la computadora de una manera más directa.
+
+**** Sin embargo las terminales tienen muchas limitaciones, no puedes dibujas cosas, mostrar imágenes, y la más importante es que es un paradigma completamente desconocido para las personas, y esto era una gran limitante para que aquellas personas que no sabían de computación pudieran utilizar estas primeras computadoras, así que si estás personas quisieran que más personas utilizaran sus computadoras deberíasn hacer algo para que alguien pudiera utilizarla sin tener que estudiar un manual para ello.
+
+**** Fue cuando se hizo una de las investigaciones más importantes y de más alto impacto para el desarrollo de interfaces, fue en la empresa Fulana que se empezó a investigar maneras más sencillas de interactuar con las computadoras, se utilizaron formas en las que los niños aprendian para saber como la psique humana entendía la información que se les presentaba, notaron que los niños apuntaban a las cosas que querían y esto era una acción muy común y bien aprendida por las personas así que introdujeron un elemento que permitía marcar un lugar como si estuvieras apuntando, pero de que manera se podía mover ese puntero si solo se tiene un teclado? Fue cuando se inventó el ratón de computadora, este elemento de interfaz permitía mover el puntero en la pantalla aprovechando la habilidad de coordinacion mano ojo que poseen las personas. Además de todo esto se introdujo un paradigma de ventanas para encapsular los programas en cajas que fueran facilmente diferenciables, en un inicio estás ventanas no eran "flotantes" sino que se ajuntaban a la pantalla, una idea que todavía es utilizada en algunos sistemas.
+
+**** Fueron muchos más los avances que se introdujeron con está investigación, pero para las personas que vieron esto por primera vez eran cambios tan radicales que no parecía pudieran terminar de enternderlos y no fue hasta varios años después que estos desarrollos empezaron a entrar en el mercado masivo.
+
+**** La primer computadora 
+
+*** Consideraciones para la aplicación en la robótica
+
+*** Interfaces web y la robótica
+
+** Aplicando desarrollo web en la robótica
+
+*** Introducción al funcionamiento de las tecnologías web
+
+*** Separación de frontside y server side
+
+*** Frameworks
+
+*** Consideraciones para la aplicación en la robótica
+
+** Robots a los que se va a aplicar las interfaces web
+
+*** FinDER
+
+**** Necesidades
+
+**** 
+
+*** Robot subacuático
+
+*** Robot esférico
+
+** Conclusiones

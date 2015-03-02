@@ -1,0 +1,20 @@
+.input-group
+  .input-group-btn(dropdown)
+    button.btn.btn-default(type='button') Connect
+    button.btn.btn-default.dropdown-toggle(type='button', dropdown-toggle)
+      span.caret
+      span.sr-only Connect
+    ul.dropdown-menu(role='menu')
+      li
+        a(href='#') Connect
+      li
+        a(href='#') Recconect
+      li
+        a(href='#') Disconnect
+      li.divider
+      li
+        a(href='#') Delete
+  span.input-group-addon {{name}}
+  span.input-group-addon {{port}}
+  input.form-control(type='text', aria-label='...')
+  span.input-group-addon Time

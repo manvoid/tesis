@@ -1,0 +1,10 @@
+{
+  'connections': [
+    {
+      'name': 'Time',
+      'port': 'localhost:1929',
+      'state': 0,
+      'time': '1223123'
+    }
+  ]
+}

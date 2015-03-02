@@ -1,0 +1,173 @@
+
+* Título
+
+** Aplicación de interfaces web para robots
+
+** Aplicación de tecnología web en interfaces de robots
+
+** La tecnología web en interfaces robóticas
+
+** Tecnología web en interfaces para robots
+
+** Utilizando tecnología web para interfaces en robots
+
+* Formulación del problema
+
+** Las interfaces gráficas son la primer capa que se encuentra entre el usuario y una computadora, en los últimos años se han hecho grandes avances en como es que estas interfaces ayudan a los usuarios a entender de una manera sencilla y directa el funcionamiento del sistema además de permitirle obtener el mayor provecho posible de este, sin embargo las interfaces en robótica no han tenido demasiado desarrollo, al menos en la robótica a nivel licenciatura. En este trabajo se propone el uso de las tecnologías web, las cuales han sido ampliamente desarrolladas en los últimos años, como una opción para crear interfaces modernas en diversos proyectos de robótica.
+
+** El desarrollo de interfaces modernas ha mostrado sus ventajas al crear experiencias de usuario sencillas y el uso de la misma es intuitivo, se necesitan menos manuales ya que la interfaz se explica por si misma, la informacion importante es más visible, y la que no importa se oculta hasta que el usuario la necesita. Sin embargo estás técnicas en la creación de interfaces no han sido utilizadas de manera común en el desarrollo de robótica, (principalmente en desarrollos escolares), lo cual tendría enormes ventajas en la operación y mantenimiento de los robots.
+
+** Las tecnologías web han sido utilizadas desde el inicio del internet para compartir información de maneras eficientes y versátiles. El aumento en su importancia en los últimos años lo ha puesto como una opción viable para no solo creación de páginas web sino de aplicaciones de uso general, robustas y potentes.
+
+** A pesar del enorme impacto y desarrollo que han tenido las tecnologías web en los últimos años en el ámbito de la robótica no han sido tan exploradas o utilizadas en los proyectos. Es necesario explorar estás tecnologías tomando en cuenta las necesidades particulaes de los proyectos de robótica para crear metodologías y herramientas que permitan una fácil adopción de estas tecnologías.
+
+* Objetivo
+
+** Las tecnologías web han evolucionado mucho en los últimos años, abriendo un mundo de posibilidades para la aplicación de estás tecnologías en diferentes campos, el área de las interfaces de robótica a pesar de existir proyectos al respecto no se ha explorado lo suficiente para descubrir las posibilidades que se pueden tener
+
+** El avance de la tecnología web ha sido constante y ha mejorado mucho en los últimos años, con herramientas que permiten
+
+** Se ha tenido un gran avance en el desarrollo de la tecnología web, se busca aplicar esta tecnología en la creación de interfaces para robots, aprovechando sus ventajas y disminuendo los problemas que pueden hacer dificil su adopción en proyectos de todo tipo.
+
+* Indice
+
+** Introducción
+- Algún enunciado o cosa que pueda dar a entender las tres cosas que se van a ver a continuación, sobre tecnología web, sobre las interfaces que estás pueden crear y sobre la importancia que esto puede tener en la robótica.
+
+*** The rising of de la tecnología web
+- Introducción sobre la tecnología web
+- Un poco de historia
+- Evolución
+- Estado actual de la tecnología web
+- Ejemplos de donde se ha utilizado
+- Explicación del objetivo de la tesis
+
+*** Interfaces graficas modernas
+- Cuales fueron las primeras interfaces
+- Como es que las interfaces están ligadas con la tecnología
+- Ver algunos de los puntos más importantes en el desarrollo de interfaces, ratón, ventanas, botones
+- Importancia de acercar los objetos de uso diario a las personas para no tener que reaprender las cosas
+- El futuro de las interfaces
+
+*** Y los robots?
+- Consideraciones especiales que hay que tener en robótica
+- Herramientas que se han utilizado a lo largo del tiempo
+- Limitaciones de estas aproximaciones
+- Ejemplos de algunos proyectos
+
+** Conociendo las tecnologías web (propuesta de solución)
+- El mundo de las tecnologías web es enorme y es importante crear una base solida y flexible para crear las aplicaciones que se desee, en el siguiente capitulo se hablará acerca de las tecnologías utilizadas en el desarrollo web y las propuestas que se hacen para el presente ejercicio
+
+*** Diferencia entre backend y frontend, mapa general de una aplicación web
+- Explicación general del funcionamiento de la tecnología web
+- Separación de las partes que se involucran
+- Explicación del frontside
+- Explicación del serverside
+
+*** Tecnologías en el frontside
+- El crear cosas en el frontside a mano es muy complicado cuando se vulven aplicaciones grandes
+- Para eficientizar el desarrollo se utilizan frameworks de diferentes tipos
+- Existen frameworks css y frameworks javascript
+- Importancia del frontside en el robot
+
+**** Frameworks CSS
+- Para que funciona un framework css
+- Algunos de los más conocidos
+- Ventajas y desventajas
+- Ejemplo
+
+**** Frameworks Javascript
+- Para que funciona un framework javascript
+- Algunos de los más conocidos
+- Ventajas y desventajas
+- Ejemplo
+
+*** Tecnologías en el server
+- La necesidad de utilizar servers para las páginas web
+- Cosas en las que ayuda tener un server
+- Importancia del server en el robot
+
+**** Framework para server
+- Para que funciona un framework css
+- Algunos de los más conocidos
+- Ventajas y desventajas
+- Ejemplo
+
+*** Herramientas de debugeo y desarrollo
+- Nodejs
+- Bower
+- Yeoman
+- Jasmin
+- Phantomjs
+
+*** Un ejemplo sencillo de la aplicación de estás tecnologías de manera integrada
+- Un ejemplo sencillo de como integrar todas estas tecnologías
+
+** Metodología de desarrollo en los robots
+- Teniendo en cuenta la problématica y las herramientas con las que contamos para solucionar los problemas se evaluarán posibles sistemas de aplicación que pueden ayudar, seleccionando tecnologías, metodologías y procesos
+
+*** Procesos para la creación de un robot con sus necesidades
+
+*** Problemáticas
+
+*** Propuesta de solución
+
+** Aplicación de las tecnologías en la robótica
+- Hablar sobre los tres casos que se van a desarrollar
+- Consideraciones a la hora de planear las tecnologías que se van a utilizar
+- Como iniciar cuando tienes el stack decidido
+
+*** Robot 1
+- Consideraciones especiales
+- Necesidades especificas
+- Tecnologías utilizadas
+- Resultado
+
+*** Robot ..
+
+*** Resultados
+- Que tan bien respondieron las interfaces
+- Tiempo de desarrollo
+- Cosas que resultaron correctas y cuales no
+
+** Conclusiones
+- La tesis fue correcta y resulto como se esperaba?
+- Que consideraciones hay que tomar en cuenta
+- Que se puede mejorar
+- Trabajo a futuro
+
+* Capítulos
+
+** Introducción
+
+** Historia de las interfaces gráficas
+
+*** Las interfaces han existido desde que existe la tecnología ya que es la manera en la que nosotros interactuamos con ella, y esto tiene una gran importancia ya que la tecnología son cosas que nosotros creamos así que podemos darle la forma que nos sea más sencilla de utilizar y que esté adaptada a nosotros
+
+*** Las interfaces gráficas nacieron de la necesidad de una mejor interacción de las personas con las computadoras, más que nada para poder acercar a las personas que no eran expertas a un uso más sencillo y natural.
+
+*** El primer gran salto la introducción del ratón de computadora, este permitía interactuar con la computadora con otras cosas además del teclado y en particular acercaba a los usuarios con un concepto muy sencillo de entender, el apuntar que es lo que te interesa y seleccionarlo.
+
+*** Con esto se vió la enorme ventaja de crear interfaces sencillas e intuitivas, el crear iconos que remembraran cosas de uso común como un disquete para guardar el archivo, unas tijeras para cortar texto y pegamento para pegarlas son ejemplos de conceptos sobre una interfaz de usuario más común
+
+*** Sin embargo desde que inició la intefaz gráfica y se crearon los conceptos de menu desplegable, el apuntador del ratón, botones, sliders, el desarrollo de interfaces no cambió mucho, estás eran cuadradas, con botones, marcos, pestañas etc.
+
+*** En los inicios de las interfaces en las primeras computadoras
+
+** Desarrollo moderno de las interfaces gráficas
+
+*** Desde que introdujo el mouse el desarrollo de las interfaces no había cambiado mucho, seguian haciendose menus, botones, cajas de texto, todo pensado para funcionar de manera optima con el teclado y el ratón, sin embargo con la introducción de las pantallas táctiles especialmente con el nacimiento de los smartphone se tuvo un mundo nuevo de formas en las que las personas podían interactuar con los dispositivos, y así es como nació una revolución en la creación de las intefaces, en particular Apple que fue un pionero en esto opto por crear interfaces que como se había visto en el pasado pudieran recordar los objetos que utilizamos el día a día, si se tienen una calculadora, esta nos recuerda las calculadoras que siempre hemos utilizado, si es un radio fm, se parece a un radio, todo esto con la intención de no tener que reeducar a las personas que vayan a utilizar la aplicación sino que con las cosas que ya conocen puedan utilizar estas aplicaciones.
+
+*** Y fue en ese momento que las personas se dieron cuenta de la necesidad de crear interfaces intuitivas y dinámicas, 
+
+** Interfaces en el mundo de la robótica
+
+*** La creación de las interfaces gráficas en robótica tienen su propio lugar a parte de las interfaces para aplicaciones más generales, en primer lugar porque los desarrolladores de robots no eran necesariamente expertos en computación lo que generaba que no se preocuparan mucho por la calidad o la experiencia con sus interfaces
+
+*** Además los proyectos de robótica son tan diversos en plataformas y sistemas de comunicación que cada proyecto necesitaba un sistema especifico de interfaz.
+
+*** Se pueden utilizar todos los sistemas de creacion de interfaces en windows, linux, mac, web, entre otros propietarios como labview
+
+*** Generalmente las interfaces en la robótica tienen necesidades muy especificas diferentes a las utilizadas en otras aplicaciones, entre estas primero está la comunicación, es necesario que el robot se comunique con la interfaz para mandar y recibir información, en realidad no tiene mucho sentido el tener una interfaz que no interactue y se comunique con el robot de alguna manera. Debe ser capaz de mandar diferentes tipos de datos de una manera eficiente, como datos booleanos, datos enteros, flotantes, además de audio y video en algunos casos. Debe ser capaz de recibir y mandar está información en tiempo real, o lo más cercano que se pueda. Debe tener controles rápidos y claros para poder visualizar la información de una manera sencilla. Y así mismo debe ser capaz de poder mandar la información al robot de una manera sencilla.
+
+*** Todo esto se pude lograr en alguna medida con cualquier sistema de creación de interfaces
