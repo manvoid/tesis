@@ -5,7 +5,7 @@
 
 ** La historia de las interfaces gráficas está muy ligada a la computación ya que es en una computadora donde se ejecutan estás interfaces y por lo tanto están limitadas a las limitaciones de hardware.
 
-** Por ejemplo en los inicios 
+** Por ejemplo en los inicios, pero que inicios?
 
 * Índice
 
