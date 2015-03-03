@@ -1,7 +1,7 @@
 
 * Introducción (Capitulo 1)
 
-** Sumario2
+** Sumario
 - La tecnología web surge como la solución a una necesidad de crear sistemas sencillos para poder compartir información, desde la misma concepción de esta tecnología la parte de comunicación es fundamental
 - Sin embargo no solo es información, sino como es que se presenta y es ahí donde surge el termino de el dinseño en las interfaces, este diseño que tiene mucha relevancia
 - Para terminar en como es que se pueden aplicar estos conceptos y tecnologías
