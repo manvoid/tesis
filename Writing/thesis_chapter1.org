@@ -1,7 +1,7 @@
 
-* Prefacio
+* Prefacio Capítulo
 
-** Desde que se desarrollo la primer computadora se han buscado manera efectivas y sencillas para que las personas interactuen con ellas, desde los primeros inicios en el desarrollo de estás experiencias se sabe que es importante que esta interacción se sienta natural, que necesite las intrucciones minimas posibles para que funcione, que utilice conceptos con los que el usuario este familiarizado.
+** Desde que se desarrollo la primer computadora se han buscado manera efectivas y sencillas para que las personas interactúen con ellas, desde los primeros inicios en el desarrollo de estás experiencias se sabe que es importante que esta interacción se sienta natural, que necesite las instrucciones mínimas posibles para que funcione, que utilice conceptos con los que el usuario este familiarizado.
 
 ** Al final de cuentas es una abstracción del funcionamiento de la máquina, en lugar de utilizarla directamente en los componentes que le dan su funcionamiento se crean capas para que el usuario pueda ver y hacer las cosas que realmente necesita sin tener que preocuparse de como es que funciona internamente.
 
