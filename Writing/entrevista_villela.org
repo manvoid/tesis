@@ -1,0 +1,22 @@
+
+* Distintos sistemas de desarrollo dependiendo del alumno
+
+** windows, matlab, procesar tiempo real
+
+** se diseñan en c, en java, en el lenguaje de matlab c, cosas no muy complicadas, sistema osi, 
+
+** tiempo real
+
+** Nx,
+
+** windows, es una limitante, rendimiento no es bueno, 
+
+** Todo funcionar en el mismo sistema
+
+** constrol remoto
+
+** labview
+
+* matlab
+
+* visual servoing

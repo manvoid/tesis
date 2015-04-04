@@ -18,14 +18,6 @@
 
 - El desarrollo web en estos momentos está en boca de todos
 
-*** En los tiempos antes del internet no exitían maneras eficientes de compartir información, fue así que un grupo de investigadores en el CERN decidieron crear un sistema de intercambio de información eficiente basado en un protocolo y que garantizara que la información fuera mandada sin errores. Fueron estas investigaciones las que llevaron a la creación de lo qu ehoy conocemos como internet, desde la creación del protocolo tcp/ip, hasta el el lenguaje HTML que ayudaba a darle forma al contenido que se transmitía. Estás fueron las primeras tecnologías web, sin embargo con el paso de los años fue evolucionando adaptandose a las necesidades de la sociedad y aprovechando las nuevas ventajas tecnologicas. Fue así como además surgió el lenguaje CSS, javascript, PHP, AJAX, y así un sinfin de tecnologíás.
-
-*** Todas ellas han demostrado varias características importantes que las han hecho extremadamente populares, y no solo eso sino también flexibles, no están limitadas a un sistema operativo, o a un esquema de interfaces. Esto llevo a que no solo rompiera paradigmas a la hora de comunicar información sino también a cambiar la manera en la que se entienden las interfaces, se experimentó con nuevos diseños, se le dió gran prioridad a la experiencia de usuario, y surgió toda una nueva area a la hora de crear experiencias de usuario.
-
-*** Sin embargo durante un tiempo estas tecnologías solo estuvieron presentes en el desarrollo de páginas web, pero ha sido con  cambios recientes que le han dado gran poder a las aplicaciones web de tal manera que al día de hoy pueden competir con aplicaciones nativas pero con todas las ventajas que siguen teniendo las aplicaciones web. Se han creado desde aplicaciones que pueden tomar notas sencillas, guardarlas y que se pueden ver desde cualquier lugar con internet. Hasta entornos completos para oficina, herramientas de dibujo avanzadas, software científico etc. En las que han logrado mostrar grandes avances y ventajas sobre otros desarrollos similares. Es cierto que todavía no llegan a un nivel de integración tal que puedan reemplazar en todos los aspectos a las aplicaciones nativas pero sus ventajas resultan mejores en muchos casos.
-
-*** A pesar del éxito que han tenido el desarrollo de aplicaciones web en diferentes áreas, en el area de la robótica no ha sido utilizado tanto, al menos en la facultad de ingeniería de la UNAM, así que en los siguientes cápitulos se explorarán el estado actual de las tecnologías web para después proponer algunas que ayuden particularmente a los proyectos de robótica creando proyectos que puedan ayudar en diferentes fases del desarrollo.
-
 *** [#A]
 
 Hoy en día todos conocemos la tecnologíá web y la utilizamos todo el tiempo, ya sea para el correo electrónico, mapas, comprar cosas, entre muchas otras, sin embargo no siempre fue algo tan común. La tecnología web nació como solución  para poder compartir información entre investigadores de manera eficiente, el correo electrónico tenía limitaciones y se necesitaba un sistema que permitiera ser más gráfico, muchas personas pudieran ver y se pudiera actualizar constantemente. Es así como en el CERN en el año de 1982 desarrollaron las primeras tecnologías web, las cuales siguen siendo un pilar para el internet, el protocolo TCP y el lenguaje declarativo HTML. Es grande la evolución que ha tenido la web desde sus inicios en el CERN pero sin duda se ha convertido en una parte fundamental del desarrollo tecnologíco actual.
@@ -38,16 +30,91 @@ En los tiempos antes del internet no exitían maneras eficientes de compartir in
 
 La tecnología web fue aumentando rápidamente en popularidad, en gran medida gracias al creciente uso de internet y la cada vez mejor implementación de estandares. Se fueron agregando cada vez más funciones, lo que hizo que se pudieran desarrollar aplicaciones web, las cuales ya no solo eran páginas estáticas de información sino aplicaciones completas que interactuaban con los usuarios de forma dinámica. Además debido a la versatilidad a la hora de construir la parte gráfica y de interacción las interfaces empezaron a experimentar con diferentes formas de interfaces y experiencia de usuario.
 
-Con esta tecnología web madura se empezatron a desarrollar
+on esta tecnología web madura se empezatron a desarrollar
+
+*** En los tiempos antes del internet no exitían maneras eficientes de compartir información, fue así que un grupo de investigadores en el CERN decidieron crear un sistema de intercambio de información eficiente basado en un protocolo y que garantizara que la información fuera mandada sin errores. Fueron estas investigaciones las que llevaron a la creación de lo qu ehoy conocemos como internet, desde la creación del protocolo tcp/ip, hasta el el lenguaje HTML que ayudaba a darle forma al contenido que se transmitía. Estás fueron las primeras tecnologías web, sin embargo con el paso de los años fue evolucionando adaptandose a las necesidades de la sociedad y aprovechando las nuevas ventajas tecnologicas. Fue así como además surgió el lenguaje CSS, javascript, PHP, AJAX, y así un sinfin de tecnologíás.
+
+*** Todas ellas han demostrado varias características importantes que las han hecho extremadamente populares, y no solo eso sino también flexibles, no están limitadas a un sistema operativo, o a un esquema de interfaces. Esto llevo a que no solo rompiera paradigmas a la hora de comunicar información sino también a cambiar la manera en la que se entienden las interfaces, se experimentó con nuevos diseños, se le dió gran prioridad a la experiencia de usuario, y surgió toda una nueva area a la hora de crear experiencias de usuario.
+
+*** Sin embargo durante un tiempo estas tecnologías solo estuvieron presentes en el desarrollo de páginas web, pero ha sido con  cambios recientes que le han dado gran poder a las aplicaciones web de tal manera que al día de hoy pueden competir con aplicaciones nativas pero con todas las ventajas que siguen teniendo las aplicaciones web. Se han creado desde aplicaciones que pueden tomar notas sencillas, guardarlas y que se pueden ver desde cualquier lugar con internet. Hasta entornos completos para oficina, herramientas de dibujo avanzadas, software científico etc. En las que han logrado mostrar grandes avances y ventajas sobre otros desarrollos similares. Es cierto que todavía no llegan a un nivel de integración tal que puedan reemplazar en todos los aspectos a las aplicaciones nativas pero sus ventajas resultan mejores en muchos casos.
+
+*** A pesar del éxito que han tenido el desarrollo de aplicaciones web en diferentes áreas, en el area de la robótica no ha sido utilizado tanto, al menos en la facultad de ingeniería de la UNAM, así que en los siguientes cápitulos se explorarán el estado actual de las tecnologías web para después proponer algunas que ayuden particularmente a los proyectos de robótica creando proyectos que puedan ayudar en diferentes fases del desarrollo.
 
 ** The rising of the web technology
 - La historia de la tecnolgía web, como inició, mencionar características sobre las tecnologías base que se utilizaron desde el inicio, HTTP, HTML, CSS, Javascript, sobre la naturaleza que se tiene para comunicación, como fue mejorando con el tiempo agregandosele nuevas caracteristicas y como fue la evolución de las aplicaciones web, desde las páginas estáticas con gif hasta google drive que es una aplicación completa, mostrar ejemplos de aplicaciones de estás tecnologías, vestibles, internet de las cosas etc
 
-*** La tecnología web comprende muchas tecnologías que funcionan de manera simultanea para poder crear lo que conocemos como interfaces web, las cuales se comunican de maneras diferentes con los procesos externos con los que se están trabajando.
+*** El inicio de la internet
 
-*** 
+**** El concepto de internet y world wide web (web) son muy utilizados y a veces se refieren de manera indistinta a el gran sistema de comunicación que contacta la socmputadoras hoy en día, sin embargo estos terminos en realidad se refieren a dos cosas muy diferentes y bien delimitadas,
 
-** Interfaces gráficas
+**** Para muchos puede parecer que el internet se originó allá por los años 90, sin embargo esto no resulta cierto, el internet no fue algo que se desarrollara de manera precisa desde un inicio y llegara a ser lo que hoy es de un día al otro. 
 
-** Y los robots?, 
+**** La internet es la red que se encarga de poder conectar a las computadoras entre si y poder tener un mismo lenguaje base con el cual poder transmitir la información
+
+**** La world wide web es una serie de tecnologías que trabajan encima de las capas de internet para proporiconarnos una manera eficiente y sencilla de poder consumir información
+
+**** Así que podemos decir que la web es un "aplicación" construida encima del internet.
+
+**** El internet inicia a mediados de los años 60, y la organización encargada de realizarla es ARPA, una organización de investigación militar de los estados unidos, la razón principal para su creacion es crear maneras más eficientes y sencillas de comunicar computadoras entre si y de esa manera poder colaborar desde diferentes centros de investigación.
+
+**** En ese entonces las computadoras no se podían comunicar entre si, en gran medida a que cada una era muy distinta y no compartían protocolos en común con los que se pudieran comunicar, el desarrollo de ARPA buscaba generar esos protocoloes estandar para que cualquier computadora se pudiera comunicar con las demás.
+
+**** La primer red de internet que se crea se llamó ARPAnet y constaba de 4 computadoras de diferentes universidades conectadas entre si.
+
+**** Esta primer red utilizaba un protocolo de comunicación llamado NCP (network control program) y sobre él se crearon diversas aplicaciones para el uso de este canal de comunicación siendo telnet y ftp dos de los más importantes
+
+**** Se fueron creando otras redes además de la red de ARPAnet, y en un momento todas interconectaron las computadoras de sus redes y ahí fue cuando se creó la Internet (interconection networks)
+
+**** Fueron varias las desciiones de diseño que se implementaron desde los inicios en internet, algunas buenas y otras malas, como ventajas se tuvieron
+- Una arquitectura abierta
+- Control distribuido
+- Simplicidad
+
+**** Algunas debilidades fueron
+- el limite en las direcciones IP
+- Faltas de vision en la seguridad
+
+*** Protocolos de internet
+
+**** Fue en 1974 que se implementó el protocolo de comunicación que se usa hoy en día TCP/IP,
+
+**** Los protocolos son las capas que comunican la información desde una computadora hasta otra, viendolo desde una perspectiva de aplicaciones se puede tener la siguiente tabla de capas de comunicación
+
+| layer      | Propósito                                      |
+| Aplicación | E-mail, ftp                                    |
+| transporte | TCP/UDP                                        |
+| Intert     | IP                                             |
+| Red        | Transmisión de datos crudos entre nodos de red |
+
+**** Los protocolos de red y de internet no se pueden cambiar pero en el lado de la aplicación se puede decidir utilizar ya sea TCP o UDP, cada uno con sus ventajas y desvejtajas,
+
+**** El protocolo TCP es un protocolo muy confiable que teiene redundancia en errores para poder garantizar que la información llega de manera adecuada a la computadora destino
+
+**** El protocolo UDP no hace esta verificación de errores pero es mucho más rapida que TCP
+
+**** Los casos de uso de cada uno se puden ver en la siguiente tabla
+
+*** El nacimiento de la web
+
+**** Después del nacimiento del internet se vió un gran potencial en el uso de este sistema para comunicación entre computadoras, sin embargo hasta ese momento solo se podían hacer cosas con telnet, email y ftp.
+
+**** En 1989 Tim Berners-Lee presentó ante el CERN su proyecto llamado World Wide Web. La idea era poder crear estandares de comunicación de información que los investigadores alrededor del mundo pudieran utilizar.
+
+**** 
+
+*** Navegadores web
+
+**** 
+
+*** Servidores web
+
+*** El futuro del internet y la web
+
+** Robot e interfaces gráficas
 - El desarrollo robótico y las interfaces, como desde un inicio la robótica ha estado ligada con las interfaces que se utilizan, historia de las interfaces en los robots y algunos ejemplos
+
+*** Interfaces gráficas en la computación
+
+**** 
+
+*** Interfaces gráficas en los robots

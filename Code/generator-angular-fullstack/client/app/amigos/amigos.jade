@@ -2,32 +2,28 @@ div(ng-include='"components/navbar/navbar.html"')
 
 .container
   .row
-    .col-md-6
-      .btn.btn-default(ng-click='socketConnect()') Conectar
-    .col-md-6
-      .btn.btn-default(ng-click='socketDisconnect()') Desconectar
-    .col-md-6
-      .btn.btn-default(ng-click='sendMessage()') Mensaje
-    .col-md-6 
-      .btn.btn-default Estado A: {{socketState}}
-    .col-md-12
-      form.form-horizontal
-        .form-group
-          label.control-label.col-sm-1(for='inputName') Name
-          .col-sm-4
-            input#inputName.form-control(type='text', placeholder='Motor Velocity')
-          label.control-label.col-sm-1(for='inputPort') Port
-          .col-sm-4
-            input#inputPort.form-control(type='text', placeholder='localhost:3421')
-          .col-sm-2
-            button.btn.btn-primary(type='submit') Add
-  hr
+    .col-md-3.col-sm-3
+      .btn.btn-default(ng-click='subscribeTo("encoder")') Suscribirse
+    .col-md-3.col-sm-3
+      .btn.btn-default(ng-click='sendSocketsList()') List sockets
+    .col-md-3.col-sm-3
+      .btn.btn-default(ng-click='sendTopicsList()') List topics
   .row
     .col-md-12
-      socket-connection-basic(name='Temperatura', port='1111', data='1122')
+      h2 Lista de nodos conectados al servidor 
+        small
+          a(href="", ng-click="getNodesNames()") actualizar
+  .row(ng-repeat="publisherName in publishersNames", style="margin: 5px 0")
     .col-md-12
-      socket-connection-basic(name='Distancia', port='2222', data='1122')
-    .col-md-12
-      socket-connection-basic(name='Distancia', port='2222', data='1122')
-    .col-md-12
-      socket-connection-basic(name='Medicion', port='1312123', data='414141jfdfsfsf')
+      form.form-inline
+        .form-group
+          p.form-control-static(style="margin: 0 5px") {{publisherName}}
+        .form-group
+          input#inputPassword2.form-control(placeholder='Datos', style="margin: 0 5px", value="{{remoteData[publisherName]}}") 
+        button.btn.btn-primary(ng-click="subscribeTo(publisherName)", style="margin: 0 5px") Monitorear
+        button.btn.btn-danger(ng-click="unsubscribeFrom(publisherName)") Detener
+  
+  // hr
+  // .row
+  //   .col-md-12(ng-repeat="connection in connections")
+  //     socket-connection-basic(name="{{connection.name}}", port="{{connection.port}}", data="{{connection.data}}")

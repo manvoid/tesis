@@ -1,39 +1,56 @@
 'use strict';
 
 angular.module('generatorAngularFullstackApp')
-  .factory('Socket', function ($rootScope, socketFactory) {
-    var socket;
-    var state;
-    var socketInit = function () {
-      socket = socketFactory();
-      state = 'disconnected';
-      socket.forward('broadcast');
-      socket.on('connect', function (socket) {
-        state = 'connected';
-        $rootScope.$broadcast('socket:stateChanged', "hola");
+  .factory('Socket', function ($rootScope, $websocket) {
+    var masterSocket;
+    var masterSocketState;
+    var masterSocketInit = function () {
+      masterSocket = $websocket('ws://localhost:9000');
+      masterSocketState = 'disconnected';
+      masterSocket.onOpen(function (message) {
+        console.log('se conectó el socket');
+        var msg = {
+          'event': 'configuration',
+          'type': 'frontend',
+          'name': 'miNavegador'
+        };
+        masterSocket.send(msg);
+        $rootScope.$broadcast('socket:stateChanged', masterSocket.readyState);
       });
-      socket.on('disconnect', function (socket) {
-        if(state !== 'disconnected') {
-          state = 'disconnected';
-          $rootScope.$broadcast('socket:stateChanged', "hola");
+      masterSocket.onClose(function () {
+        console.log('se desconectó el socket');
+        $rootScope.$broadcast('socket:stateChanged', masterSocket.readyState);
+      });
+      masterSocket.onMessage(function (message) {
+        console.log(message.data);
+
+        switch (message.event) {
+        case 'sockets_list':
+          break;
+        case 'topics_list':
+          break;
+        case 'data':
+          console.log('Se recibió el dato %s', message.data);
+          break;
         }
       });
     };
-    socketInit();
+
+    masterSocketInit();
+    
     return {
-      socket: socket,
+      masterSocket: masterSocket,
+      sendMessage: function (msg) {
+        masterSocket.send(msg);
+      },
       getState: function () {
-        return state;
+        return masterSocket.readyState;
       },
       disconnect: function () {
-        socket.disconnect();
-        state = 'disconnected';
-        $rootScope.$broadcast('socket:stateChanged', "hola");
+        masterSocket.close();
       },
       connect: function () {
-        socket.connect();
-        state = 'connected';
-        $rootScope.$broadcast('socket:stateChanged', "hola");
+        masterSocketInit();
       }
     }
 });

@@ -12,9 +12,22 @@ angular.module('generatorAngularFullstackApp')
 
     $scope.isCollapsed = true;
 
-    $scope.socketState = Socket.getState();
+    var changeSocketState = function (state) {
+      if (state === 1)
+        $scope.socketState = 'Connected';
+      else if (state === 0)
+        $scope.socketState = 'Connecting';
+      else if (state === 3)
+        $scope.socketState = 'Disconnected';
+      else
+        $scope.socketState = 'What!?';
+    };
+
+    changeSocketState(Socket.getState());
+
     $scope.$on('socket:stateChanged', function (event, data) {
-      $scope.socketState = Socket.getState();
+      changeSocketState(data);
+      $scope.$apply();
     });
 
     $scope.socketConnect = function () {

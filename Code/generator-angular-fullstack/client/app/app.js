@@ -6,7 +6,7 @@ angular.module('generatorAngularFullstackApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'btford.socket-io'
+  'angular-websocket'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

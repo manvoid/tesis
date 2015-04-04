@@ -1,7 +1,7 @@
 
 * Título
 
-** Interfaces web para robots móviles
+** Desarrollo de Interfaces web para robots móviles
 
 ** Aplicando tecnología web en robot móviles
 
@@ -11,17 +11,25 @@
 
 ** Interfaces gráficas en robots de búsqueda
 
+** Aplicación de interfaces web en robótica
+
+** Desarrollo de interfaces web
+
+** Aplicación de tecnologías web en interfaces de robótica
+
 * Formulación del problema
 
-** Las interfaces gráficas son la primer capa que se encuentra entre el usuario y una computadora, en los últimos años se han hecho grandes avances en como es que estas interfaces ayudan a los usuarios a entender de una manera sencilla y directa el funcionamiento del sistema además de permitirle obtener el mayor provecho posible de este, sin embargo las interfaces en robótica no han tenido demasiado desarrollo, al menos en la robótica a nivel licenciatura. En este trabajo se propone el uso de las tecnologías web, las cuales han sido ampliamente desarrolladas en los últimos años, como una opción para crear interfaces modernas en diversos proyectos de robótica.
+** Se cuenta con distintos robots móviles de búsqueda, estos cuentan con diferentes arquitecturas de hardware y es necesario poder estar en contacto constante con ellos para poder medir sensores, monitorear los propios robots y controlarlos. 
 
-** El desarrollo de interfaces modernas ha mostrado sus ventajas al crear experiencias de usuario sencillas y el uso de la misma es intuitivo, se necesitan menos manuales ya que la interfaz se explica por si misma, la informacion importante es más visible, y la que no importa se oculta hasta que el usuario la necesita. Sin embargo estás técnicas en la creación de interfaces no han sido utilizadas de manera común en el desarrollo de robótica, (principalmente en desarrollos escolares), lo cual tendría enormes ventajas en la operación y mantenimiento de los robots.
+** Se necesita una herramienta para crar intefaces gráficas para robots móviles que cuentan con diferentes características
 
-** Las tecnologías web han sido utilizadas desde el inicio del internet para compartir información de maneras eficientes y versátiles. El aumento en su importancia en los últimos años lo ha puesto como una opción viable para no solo creación de páginas web sino de aplicaciones de uso general, robustas y potentes.
+** En el taller de robótica se cuenta con diferentes robots móviles los cuales están pensados para poder funcionar en situaciones de exploración, todos requieren el uso de interfaces gráficas para poder estarlos monitoreando y controlando, sin embargo los sistemas tradicionales de creación de interfaces son limitados en cuanto al alcance que puede tener, se buscan alternativas que puedan cumplir con estos requerimientos.
 
-** A pesar del enorme impacto y desarrollo que han tenido las tecnologías web en los últimos años en el ámbito de la robótica no han sido tan exploradas o utilizadas en los proyectos. Es necesario explorar estás tecnologías tomando en cuenta las necesidades particulaes de los proyectos de robótica para crear metodologías y herramientas que permitan una fácil adopción de estas tecnologías.
+* Análisis del problema
 
-** Se cuenta con distintos robots móviles de búsqueda, estos cuentas con diferentes arquitecturas de hardware y es necesario poder estar en contacto constante con ellos para poder medir sensores, monitorear los propios robots y controlarlos. 
+** Los requerimientos de los robots son los siguientes:
+
+*** 
 
 * Objetivo
 

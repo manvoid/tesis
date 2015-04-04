@@ -1,0 +1,57 @@
+
+* Tesis
+
+** Continuar el estar escribiendo la tesis
+
+** Mejorar el sistema de la apliacción para que:
+
+*** 
+
+* Aplicación
+
+** Se definió la problemática y objetivos
+
+*** Las tecnologías web son interesantes y aplicadas en grandes areas, se puede aprovechar para su aplicación en la robótica
+
+*** Por sus caraterísticas es una buena idea que sea utilizado en el desarrollo de interfaces para la comunicación de la información del robot hacía los usuarios
+
+** Definir necesidades
+Se necesitan varias cosas para que esta idea sea aplicable en los proyectos realizados en la facultad
+
+- Funcione con cualquier arquitectura del robot
+- Modificación mínima en el robot
+- Sin requerir conocimientos avanzados de web
+- Transmitir información en tiempo real
+
+** Sistemas que han solucionado el problema de otras maneras
+- Algunos ejemplos utilizando otras tecnologías
+
+** Evaluación del estado del arte
+- tipos de servidores
+- tipos de frontend
+- sistemas de bases de datos
+- sistemas de comunicación
+
+** Propuesta de la solución
+Existen muchos elementos dentro del desarrollo web, en un principio se vió de lo que puede ayudar con las necesidades planteadas arriba
+
+- Usar un servidor nodejs
+- Socketio para la comunicación
+- angularjs para el frontend
+- bootstrap para el css
+
+** Desarrollo de la aplicación
+
+*** Definición de lo que debe hacer la aplicación
+El usuario tiene un robot del cual quiere crear una interfaz que interactúe con este sistema.
+
+Entonces debe tener muchas variables y datos a lo largo de todo su robot, se decidió tener un puerto abierto por cada tipo de mensaje para que estos puedan estar separados de los demás sin entrar en problemas por lo qeu la persona debe crear un socket por cada dato a mandar.
+
+Se utiliza la biblioteca de socketio por lo que lo único que tiene que hacer el usuario es iniciar una conexión a travez de socketio hacía el socket de la aplicación, socketio le asignará un socket y este podrá empezar a comunicar la información
+
+** Tareas y objetivos de la aplicación
+
+*** Detectar los nodos creados de manera externa
+Existen tres tipos de nodos que se pueden conectar a la aplicación, uno que mande datos a la aplicación (publisher), uno que reciba datos de la aplicacion (subscriber), y un navegador donde se va a mandar la información
+
+*** Definir los tipos de datos que pueden mandar los dos
