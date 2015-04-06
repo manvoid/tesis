@@ -6,6 +6,17 @@ angular.module('generatorAngularFullstackApp')
     $scope.remoteData = {};
     $scope.publishersNames = [];
 
+    $scope.topics = Socket.topics;
+
+    $scope.echoTopics = function () {
+      console.log(Socket.getTopics());
+    };
+
+    $scope.updateTopics = function () {
+      // console.log('getTopics');
+      Socket.updateTopics();
+    };
+
     $scope.sendSocketsList = function () {
       Socket.sendMessage({event: 'sockets_list'});
     };
@@ -15,12 +26,7 @@ angular.module('generatorAngularFullstackApp')
     };
 
     $scope.subscribeTo = function (topic) {
-      console.log('se mando una solicitud de suscripción');
-      var msg = {
-        event: 'subscribe',
-        topic: topic
-      }
-      Socket.sendMessage(JSON.stringify(msg));
+      Socket.subscribeTo(topic);
     };
 
     $scope.sendData = function () {
@@ -32,12 +38,8 @@ angular.module('generatorAngularFullstackApp')
     };
 
     $scope.unsubscribeFrom = function (topic) {
-      console.log('se mando una solicitud de unsuscripción');
-      var msg = {
-        event: 'unsubscribe',
-        topic, topic
-      };
-      Socket.sendMessage(JSON.stringify(msg));
+      console.log('desuscripcion');
+      Socket.unsubscribeFrom(topic);
     };
 
     // $scope.$on('socket:broadcast', function (event, data) {

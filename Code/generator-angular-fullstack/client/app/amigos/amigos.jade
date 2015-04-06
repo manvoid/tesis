@@ -1,27 +1,43 @@
 div(ng-include='"components/navbar/navbar.html"')
 
 .container
-  .row
-    .col-md-3.col-sm-3
-      .btn.btn-default(ng-click='subscribeTo("encoder")') Suscribirse
-    .col-md-3.col-sm-3
-      .btn.btn-default(ng-click='sendSocketsList()') List sockets
-    .col-md-3.col-sm-3
-      .btn.btn-default(ng-click='sendTopicsList()') List topics
+  // .row
+  //   .col-md-3.col-sm-3
+  //     .btn.btn-default(ng-click='getTopics()') echo topics
+  //   .col-md-3.col-sm-3
+  //     .btn.btn-default(ng-click='sendSocketsList()') List sockets
+  //   .col-md-3.col-sm-3
+  //     .btn.btn-default(ng-click='sendTopicsList()') List topics
   .row
     .col-md-12
-      h2 Lista de nodos conectados al servidor 
+      h2 Lista de tópicos 
         small
-          a(href="", ng-click="getNodesNames()") actualizar
-  .row(ng-repeat="publisherName in publishersNames", style="margin: 5px 0")
-    .col-md-12
-      form.form-inline
-        .form-group
-          p.form-control-static(style="margin: 0 5px") {{publisherName}}
-        .form-group
-          input#inputPassword2.form-control(placeholder='Datos', style="margin: 0 5px", value="{{remoteData[publisherName]}}") 
-        button.btn.btn-primary(ng-click="subscribeTo(publisherName)", style="margin: 0 5px") Monitorear
-        button.btn.btn-danger(ng-click="unsubscribeFrom(publisherName)") Detener
+          a(href="", ng-click="updateTopics()") actualizar
+  .row(ng-repeat="(name, topic) in topics")
+    a(href="", ng-if="(topic.subscribedTo == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
+    a(href="", ng-if="(topic.subscribedTo != true)",ng-click="subscribeTo(name)") Suscribirse
+    p
+      strong {{ name }} 
+      | {{ topic.subscribers }} 
+      | {{ topic.publishers }}
+      | {{ topic.data }}
+      | {{ topic.timestamp }} 
+
+  // .row
+  //   .col-md-12
+  //     h2 Lista de nodos conectados al servidor 
+  //       small
+  //         a(href="", ng-click="getNodesNames()") actualizar
+  // row(ng-repeat="publisherName in publishersNames", style="margin: 5px 0")
+  // .row
+  //   .col-md-12
+  //     form.form-inline
+  //       .form-group
+  //         p.form-control-static(style="margin: 0 5px") {{publisherName}}
+  //       .form-group
+  //         input#inputPassword2.form-control(placeholder='Datos', style="margin: 0 5px", value="{{remoteData[publisherName]}}") 
+  //       button.btn.btn-primary(ng-click="subscribeTo(publisherName)", style="margin: 0 5px") Monitorear
+  //       button.btn.btn-danger(ng-click="unsubscribeFrom(publisherName)") Detener
   
   // hr
   // .row

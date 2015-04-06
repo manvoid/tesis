@@ -6,6 +6,30 @@ module.exports = function (wss) {
   var publishers = [];
   var topics = {};
 
+  var getTopics = function () {
+    var topics_mapped = {};
+    for (var key in topics) {
+      topics_mapped[key] = {}
+      topics_mapped[key].subscribers = [];
+      topics_mapped[key].publishers = [];
+      for (var subscriber in topics[key].subscribers) {
+        topics_mapped[key].subscribers.push(topics[key].subscribers[subscriber].name);
+      }
+      for (var publisher in topics[key].publishers) {
+        topics_mapped[key].publishers.push(topics[key].publishers[publisher].name);
+      }
+    }
+    return topics_mapped;
+  };
+
+  var updateTopics = function () {
+    var topics_mapped = getTopics();
+    var msg = JSON.stringify({event: 'topics', topics: topics_mapped});
+    for (var key in frontends) {
+      frontends[key].send(msg);
+    }
+  };
+
   var configure = function (configuration, ws, error) {
 
     if (ws.type !== undefined) {
@@ -28,6 +52,10 @@ module.exports = function (wss) {
         ws.type = 'subscriber';
         ws.name = configuration.name;
         ws.topic = configuration.topic;
+        for (var key in frontends) {
+          frontends[key].send()
+        }
+        updateTopics();
         break;
       case 'publisher':
         ws.type = 'publisher';
@@ -38,6 +66,7 @@ module.exports = function (wss) {
           topics[configuration.topic] = {publishers: [], subscribers: [], type: 'none'}
         topics[configuration.topic].publishers.push(ws);
         console.log('Se agregó un nuevo publisher');
+        updateTopics();
         break;
       default:
         error();
@@ -45,15 +74,13 @@ module.exports = function (wss) {
     } else {
       error();
     }
-    
-
   };
 
   wss.on('connection', function connection(ws) {
     console.log('Se conectó un socket nuevo');
 
     ws.on('message', function incoming(message) {
-      console.log('received: %s', message);
+      // console.log('received: %s', message);
 
       if (ws.type !== 'video')
         var message = JSON.parse(message);
@@ -61,7 +88,7 @@ module.exports = function (wss) {
       // Commands that the frontend can send to the server
       if (ws.type === 'frontend') {
         switch(message.event) {
-        case 'sockets_list':
+        case 'getSockets':
           console.log('la lista de sockets es: ');
           var sockets_list = [];
           wss.clients.forEach(function each(client) {
@@ -70,8 +97,8 @@ module.exports = function (wss) {
           });
           ws.send(JSON.stringify({sockets_list: sockets_list}))
           break;
-        case 'topics_list':
-          console.log('Se solicitó la lista de temas');
+        case 'getTopics':
+          //console.log('Se solicitó la lista de temas');
           console.log(topics);
           var topics_mapped = {};
           for (var key in topics) {
@@ -86,28 +113,30 @@ module.exports = function (wss) {
             }
           }
           console.log(topics_mapped);
-          ws.send(JSON.stringify(topics_mapped));
+          ws.send(JSON.stringify({event: 'topics', topics: topics_mapped}));
           break;
         case 'broadcast_to_frontends':
           for (var key in frontends) {
             frontends[key].send('mensaje broadcastado');
           }
           break;
-        case 'subscribe':
-          console.log('Se suscribio a %s', message.topic);
+        case 'subscribeTo':
+          // console.log('Se suscribio a %s', message.topic);
           if (topics[message.topic] === undefined)
             topics[message.topic] = {publishers: [], subscribers: [], type: 'none'}
           topics[message.topic].subscribers.push(ws);
           ws.subscribedTo.push(message.topic);
+          updateTopics();
           break;
-        case 'unsubscribe':
-          console.log('Se desuscribió de %s', message.topic);
+        case 'unsubscribeFrom':
+          // console.log('Se desuscribió de %s', message.topic);
           if (topics[message.topic] !== undefined) {
             var index = topics[message.topic].subscribers.indexOf(ws);
             if (index > -1) topics[message.topic].subscribers.splice(index, 1);
             var index = ws.subscribedTo.indexOf(message.topic);
             if (index > -1) ws.subscribedTo.splice(index, 1);
           }
+          updateTopics();
           break;
         default:
           console.log('no se reconoció el evento');
@@ -122,11 +151,14 @@ module.exports = function (wss) {
         console.log('Mensaje de SUBSCRIBER');
         break;
       case 'publisher':
-        for (var key in topics[ws.topic].subscribers) {
-          topics[ws.topic].subscribers[key].send(JSON.stringify(message));
-        }
-        console.log(message);
-        console.log('Mensaje de PUBLISHER');
+        var msg = {
+          event: 'data',
+          topic: ws.topic,
+          data: message.data,
+          timestamp: message.timestamp
+        };
+        for (var key in topics[ws.topic].subscribers) 
+          topics[ws.topic].subscribers[key].send(JSON.stringify(msg));
         break;
       default:
         configure(message, ws, function error() {
@@ -146,10 +178,12 @@ module.exports = function (wss) {
           var index = topics[ws.subscribedTo[key]].subscribers.indexOf(ws);
           if (index > -1) topics[ws.subscribedTo[key]].subscribers.splice(index, 1);
         }
+        updateTopics();
       } else if (ws.type === 'publisher') {
         console.log('Se desconectó un publisher');
         var index = topics[ws.topic].publishers.indexOf(ws);
         if (index > -1) topics[ws.topic].publishers.splice(index, 1);
+        updateTopics();
       }
     });
 
