@@ -4,6 +4,7 @@ angular.module('generatorAngularFullstackApp')
   .factory('Socket', function ($rootScope, $websocket) {
     var masterSocket;
     var topics = {};
+    var nodes = {}
     var subscribedTo = [];
     var publishingTo = [];
     var masterSocketInit = function () {
@@ -20,6 +21,7 @@ angular.module('generatorAngularFullstackApp')
         };
         masterSocket.send(msg);
         $rootScope.$broadcast('socket:stateChanged', masterSocket.readyState);
+        masterSocket.sendJSON({event: 'getNodes'});
       });
       masterSocket.onClose(function () {
         console.log('se desconectó el socket');
@@ -30,30 +32,29 @@ angular.module('generatorAngularFullstackApp')
         switch (message.event) {
         case 'sockets':
           break;
-        case 'topics':
+        case 'nodes':
           // topics = message.topics;
-          console.log(topics);
-          console.log('Se actualizó en service el topic');
-          for (var key in topics) {
-            if (!(key in message.topics))
-              delete topics[key];
+          console.log(nodes);
+          console.log('Se actualizó en service el node');
+          for (var key in nodes) {
+            if (!(key in message.nodes))
+              delete nodes[key];
           }
-          for (var key in message.topics) {
-            if (topics[key] === undefined)
-              topics[key] = {};
-            topics[key].subscribers = message.topics[key].subscribers; 
-            topics[key].publishers = message.topics[key].publishers;
-            topics[key].type = message.topics[key].type;            
+          for (var key in message.nodes) {
+            if (nodes[key] === undefined)
+              nodes[key] = {};
+            nodes[key].subscribers = message.nodes[key].subscribers; 
+            nodes[key].type = message.nodes[key].type;
+            nodes[key].connected = message.nodes[key].connected;
           }
           break;
         case 'data':
-          if (topics[message.topic] === undefined)
-            topics[message.topic] = {
-              subscribers: [],
-              publishers: []
+          if (nodes[message.node] === undefined)
+            nodes[message.node] = {
+              subscribers: []
             }
-          topics[message.topic].data = message.data;
-          topics[message.topic].timestamp = message.timestamp;
+          nodes[message.node].data = message.data;
+          nodes[message.node].timestamp = message.timestamp;
           break;
         }
       });
@@ -75,34 +76,42 @@ angular.module('generatorAngularFullstackApp')
       connect: function () {
         masterSocketInit();
       },
-      updateTopics: function () {
-        masterSocket.sendJSON({event: 'getTopics'});
+      updateNodes: function () {
+        console.log('update nodes');
+        masterSocket.sendJSON({event: 'getNodes'});
       },
-      getTopics: function () {
-        return topics;
+      getNodes: function () {
+        return nodes;
       },
-      subscribeTo: function (topic) {
+      sendDataToNode: function (data, node) {
+        var msg = {
+          event: 'data',
+          node: node,
+          data: data
+        }
+        masterSocket.send(JSON.stringify(msg));
+      },
+      subscribeTo: function (node) {
         var msg = {
           event: 'subscribeTo',
-          topic: topic
+          node: node
         };
-        if (topics[topic] === undefined)
-          topics[topic] = {}
-        topics[topic].subscribedTo = true;
+        if (nodes[node] === undefined)
+          nodes[node] = {}
+        nodes[node].subscribedTo = true;
         masterSocket.send(JSON.stringify(msg));
-        
       },
-      unsubscribeFrom: function (topic) {
+      unsubscribeFrom: function (node) {
         var msg = {
           event: 'unsubscribeFrom',
-          topic: topic
+          node: node
         };
-        if (topics[topic].subscribedTo !== undefined)
-          topics[topic].subscribedTo = false;
+        if (nodes[node].subscribedTo !== undefined)
+          nodes[node].subscribedTo = false;
         masterSocket.send(JSON.stringify(msg));
       },
       // topics: function () { return self.topics;},
-      topics: topics,
+      nodes: nodes,
       subscribedTo: subscribedTo,
       publishingTo: publishingTo
     }

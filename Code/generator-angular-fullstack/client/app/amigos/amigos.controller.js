@@ -6,27 +6,28 @@ angular.module('generatorAngularFullstackApp')
     $scope.remoteData = {};
     $scope.publishersNames = [];
 
-    $scope.topics = Socket.topics;
+    $scope.nodes = Socket.nodes;
 
     $scope.echoTopics = function () {
       console.log(Socket.getTopics());
     };
 
-    $scope.updateTopics = function () {
+    $scope.updateNodes = function () {
       // console.log('getTopics');
-      Socket.updateTopics();
-    };
-
-    $scope.sendSocketsList = function () {
-      Socket.sendMessage({event: 'sockets_list'});
+      Socket.updateNodes();
     };
 
     $scope.sendTopicsList = function () {
       Socket.sendMessage({event: 'topics_list'});
     };
 
-    $scope.subscribeTo = function (topic) {
-      Socket.subscribeTo(topic);
+    $scope.sendDataToNode = function (data, node) {
+      console.log('sisi');
+      Socket.sendDataToNode(data, node);
+    };
+
+    $scope.subscribeTo = function (node) {
+      Socket.subscribeTo(node);
     };
 
     $scope.sendData = function () {

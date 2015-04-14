@@ -12,16 +12,24 @@ div(ng-include='"components/navbar/navbar.html"')
     .col-md-12
       h2 Lista de tópicos 
         small
-          a(href="", ng-click="updateTopics()") actualizar
-  .row(ng-repeat="(name, topic) in topics")
-    a(href="", ng-if="(topic.subscribedTo == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
-    a(href="", ng-if="(topic.subscribedTo != true)",ng-click="subscribeTo(name)") Suscribirse
+          a(href="", ng-click="updateNodes()") actualizar
+  .row(ng-repeat="(name, node) in nodes")
     p
-      strong {{ name }} 
-      | {{ topic.subscribers }} 
-      | {{ topic.publishers }}
-      | {{ topic.data }}
-      | {{ topic.timestamp }} 
+      strong {{ name }}
+      | Tipo: {{ node.type }} Estado: {{ node.connected }}
+      span(ng-if="node.type == 'publisher'")
+        a(href="", ng-if="(node.subscribedTo == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
+        a(href="", ng-if="(node.subscribedTo != true)",ng-click="subscribeTo(name)") Suscribirse
+      | {{ node.subscribers }} 
+      | {{ node.publishers }}
+      | {{ node.data }}
+      | {{ node.timestamp }}
+      
+    form.form-inline(ng-if="(node.type == 'subscriber')")
+      input.form-control(placeholder="mandar", ng-model="data")
+      a(href="", ng-click="sendDataToNode(data,name)").btn.btn-default Mandar
+      a(href="") Configurar
+      
 
   // .row
   //   .col-md-12
