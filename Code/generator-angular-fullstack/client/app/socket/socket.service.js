@@ -3,10 +3,9 @@
 angular.module('generatorAngularFullstackApp')
   .factory('Socket', function ($rootScope, $websocket) {
     var masterSocket;
-    var topics = {};
-    var nodes = {}
-    var subscribedTo = [];
-    var publishingTo = [];
+    var nodes = {};
+    var data = {};
+    
     var masterSocketInit = function () {
       masterSocket = $websocket('ws://localhost:9000');
       masterSocket.sendJSON = function (message) {
@@ -15,13 +14,13 @@ angular.module('generatorAngularFullstackApp')
       masterSocket.onOpen(function (message) {
         console.log('se conectó el socket');
         var msg = {
-          'event': 'configuration',
+          'event': 'configure',
           'type': 'frontend',
-          'name': 'miNavegador'
+          'node': 'miNavegador' 
         };
         masterSocket.send(msg);
         $rootScope.$broadcast('socket:stateChanged', masterSocket.readyState);
-        masterSocket.sendJSON({event: 'getNodes'});
+        masterSocket.send({event: 'getNodesInfo'});
       });
       masterSocket.onClose(function () {
         console.log('se desconectó el socket');
@@ -30,31 +29,36 @@ angular.module('generatorAngularFullstackApp')
       masterSocket.onMessage(function (message) {
         var message = JSON.parse(message.data);
         switch (message.event) {
-        case 'sockets':
-          break;
-        case 'nodes':
+        case 'nodesInfo':
           // topics = message.topics;
-          console.log(nodes);
+          console.log(message.nodes);
+          nodes = message.nodes;
           console.log('Se actualizó en service el node');
-          for (var key in nodes) {
-            if (!(key in message.nodes))
-              delete nodes[key];
-          }
-          for (var key in message.nodes) {
-            if (nodes[key] === undefined)
-              nodes[key] = {};
-            nodes[key].subscribers = message.nodes[key].subscribers; 
-            nodes[key].type = message.nodes[key].type;
-            nodes[key].connected = message.nodes[key].connected;
-          }
+          // for (var key in nodes) {
+          //   if (!(key in message.nodes))
+          //     delete nodes[key];
+          // }
+          // for (var key in message.nodes) {
+          //   if (nodes[key] === undefined)
+          //     nodes[key] = {};
+          //   nodes[key].subscribers = message.nodes[key].subscribers; 
+          //   nodes[key].type = message.nodes[key].type;
+          //   nodes[key].connected = message.nodes[key].connected;
+          // }
+          break;
+        case 'widgetsInfo':
           break;
         case 'data':
-          if (nodes[message.node] === undefined)
-            nodes[message.node] = {
-              subscribers: []
-            }
-          nodes[message.node].data = message.data;
-          nodes[message.node].timestamp = message.timestamp;
+          if (data[message.node] === undefined)
+            data[message.node] = {};
+          
+          for (var elem in data) {
+            if (data[message.node][elem] === undefined)
+              data[message.node][elem] = {};
+            data[message.node][elem].data = message.data[elem];
+            data[message.node][elem].timestamp = message.timestamp;
+          }
+          
           break;
         }
       });
@@ -78,7 +82,7 @@ angular.module('generatorAngularFullstackApp')
       },
       updateNodes: function () {
         console.log('update nodes');
-        masterSocket.sendJSON({event: 'getNodes'});
+        masterSocket.sendJSON({event: 'getNodesInfo'});
       },
       getNodes: function () {
         return nodes;
@@ -91,28 +95,28 @@ angular.module('generatorAngularFullstackApp')
         }
         masterSocket.send(JSON.stringify(msg));
       },
-      subscribeTo: function (node) {
-        var msg = {
-          event: 'subscribeTo',
-          node: node
-        };
-        if (nodes[node] === undefined)
-          nodes[node] = {}
-        nodes[node].subscribedTo = true;
-        masterSocket.send(JSON.stringify(msg));
-      },
-      unsubscribeFrom: function (node) {
-        var msg = {
-          event: 'unsubscribeFrom',
-          node: node
-        };
-        if (nodes[node].subscribedTo !== undefined)
-          nodes[node].subscribedTo = false;
-        masterSocket.send(JSON.stringify(msg));
-      },
+      // subscribeTo: function (node) {
+      //   var msg = {
+      //     event: 'subscribeTo',
+      //     node: node
+      //   };
+      //   if (nodes[node] === undefined)
+      //     nodes[node] = {}
+      //   nodes[node].subscribedTo = true;
+      //   masterSocket.send(JSON.stringify(msg));
+      // },
+      // unsubscribeFrom: function (node) {
+      //   var msg = {
+      //     event: 'unsubscribeFrom',
+      //     node: node
+      //   };
+      //   if (nodes[node].subscribedTo !== undefined)
+      //     nodes[node].subscribedTo = false;
+      //   masterSocket.send(JSON.stringify(msg));
+      // },
       // topics: function () { return self.topics;},
-      nodes: nodes,
-      subscribedTo: subscribedTo,
-      publishingTo: publishingTo
+      nodes: nodes
+      // subscribedTo: subscribedTo,
+      // publishingTo: publishingTo
     }
 });

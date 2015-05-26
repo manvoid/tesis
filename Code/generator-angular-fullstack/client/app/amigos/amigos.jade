@@ -16,19 +16,17 @@ div(ng-include='"components/navbar/navbar.html"')
   .row(ng-repeat="(name, node) in nodes")
     p
       strong {{ name }}
-      | Tipo: {{ node.type }} Estado: {{ node.connected }}
-      span(ng-if="node.type == 'publisher'")
-        a(href="", ng-if="(node.subscribedTo == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
-        a(href="", ng-if="(node.subscribedTo != true)",ng-click="subscribeTo(name)") Suscribirse
-      | {{ node.subscribers }} 
-      | {{ node.publishers }}
-      | {{ node.data }}
-      | {{ node.timestamp }}
+      | Tipo: {{ node.type }} Estado: {{ node.isConnected }}
+      | {{ node.pushableData }} 
+      | {{ node.pullableData }}
+      // span(ng-if="node.type == 'publisher'")
+      //   a(href="", ng-if="(node.pushableData == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
+      //   a(href="", ng-if="(node.pullableData != true)",ng-click="subscribeTo(name)") Suscribirse
       
-    form.form-inline(ng-if="(node.type == 'subscriber')")
-      input.form-control(placeholder="mandar", ng-model="data")
-      a(href="", ng-click="sendDataToNode(data,name)").btn.btn-default Mandar
-      a(href="") Configurar
+    // form.form-inline(ng-if="(node.type == 'subscriber')")
+    //   input.form-control(placeholder="mandar", ng-model="data")
+    //   a(href="", ng-click="sendDataToNode(data,name)").btn.btn-default Mandar
+    //   a(href="") Configurar
       
 
   // .row

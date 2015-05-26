@@ -1,4 +1,36 @@
 
+* [2015-05-07 jue]
+Las nuevas metas que se deben tener, para el desarrollo de la tesis
+
+** Definir la nueva arquitectura 
+
+** Que se puedan enviar datos en esta nueva arquitectura
+
+*** Envío en python
+
+*** Envío en c++
+
+** Crear un widget con la nueva arquitectura para el envío de datos sencillo
+
+*** Recibir en python
+
+*** Recibir en c++
+
+** Definir la aquitectura del vídeo
+
+** Crear un widget para visualizar el vídeo en la interfaz
+
+** Desarrollo de configuración de las páginas
+
+** Tener varias páginas diferentes en la aplicación
+
+** Que estas páginas puedan ser configurables
+
+** Diseñar algunos otros widgets útiles
+
+** Empezar a escribir 
+
+
 * [2015-01-20 mar]
 
 Se debe sentir como desde el sumario se prepara a las personas para poder abordar los temas de los siguientes titulos de una manera más adecuada, se muestra un tipo de problematica o situación que puede ser trabajada con los temas que se ven subsecuentemente

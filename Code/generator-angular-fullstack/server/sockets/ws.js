@@ -1,172 +1,90 @@
+
+var data = require('./dataHandler.js');
+var frontends = require('./frontendsHandler.js');
+var nodes = require('./nodesHandler.js');
+var widgets = require('./widgetsHandler.js');
+
+
 module.exports = function (wss) {
   'use strict';
 
-  var frontends = [];
-  var subscribers = [];
-  var publishers = [];
-  var nodes = {};
+  widgets.createWidget('widget1');
+  widgets.setWidgetIntervalTime('widget1', 1000);
+  widgets.setWidgetRun('widget1', function () {
+    var value = data.get('pythonSocket', 'encoder1');
+    nodes.sendDataToNode('pythonSocket', {'encoder1': value});
+  });
+  widgets.startWidgetInterval('widget1');
 
-  var getNodes = function () {
-    var nodes_mapped = {};
-    for (var key in nodes) {
-      nodes_mapped[key] = {}
-      nodes_mapped[key].subscribers = [];
-      nodes_mapped[key].type = nodes[key].type;
-      var connected;
-      nodes[key].socket === undefined ? connected = false : connected = true;
-      nodes_mapped[key].connected = connected;
-      for (var subscriber in nodes[key].subscribers) {
-        nodes_mapped[key].subscribers.push(nodes[key].subscribers[subscriber].node);
-      }
-    }
-    return nodes_mapped;
-  };
+  // widgets.createWidget('widget2');
+  // widgets.setWidgetIntervalTime('widget2', 1000);
+  // widgets.setWidgetRun('widget2', function () {
+  //   sockets.sendDataToSocket('cppclient', {control1: Math.random()});
+  // });
+  // widgets.startWidgetInterval('widget2');
 
-  var updateNodes = function () {
-    var nodes_mapped = getNodes();
-    var msg = JSON.stringify({event: 'nodes', nodes: nodes_mapped});
-    for (var key in frontends) {
-      frontends[key].send(msg);
-    }
-  };
-
-  var configure = function (configuration, ws, error) {
-
-    if (ws.type !== undefined) {
-      console.log('Ya se tenía asignado un tipo');
-      console.log('Procediendo a desconectar');
-      ws.close();
-      return;
-    }
-
-    if (configuration.event === 'configuration') {
-      switch (configuration.type) {
-      case 'frontend':
-        ws.type = 'frontend';
-        ws.node = configuration.node;
-        ws.subscribedTo = [];
-        frontends.push(ws);
-        console.log('se agregó un nuevo frontend');
-        break;
-      case 'subscriber':
-        console.log('Se agregó un subscriptor');
-        ws.type = 'subscriber';
-        ws.node = configuration.node;
-        if (nodes[ws.node] === undefined)
-          nodes[ws.node] = {}
-        nodes[ws.node].type = ws.type;
-        nodes[ws.node].socket = ws;
-        updateNodes();
-        break;
-      case 'publisher':
-        console.log('Se agregó un publicador');        
-        ws.type = 'publisher';
-        ws.node = configuration.node;
-        if (nodes[ws.node] === undefined)
-          nodes[ws.node] = {subscribers: [], type: ws.type};
-        nodes[ws.node].socket = ws;
-        console.log('Se agregó un nuevo publisher');
-        updateNodes();
-        break;
-      default:
-        error();
-      }
-    } else {
-      error();
-    }
-  };
 
   wss.on('connection', function connection(ws) {
     console.log('Se conectó un socket nuevo');
 
     ws.on('message', function incoming(message) {
-      // console.log('received: %s', message);
+      var message = JSON.parse(message);
 
-      if (ws.type !== 'video')
-        var message = JSON.parse(message);
-
-      // Commands that the frontend can send to the server
-      if (ws.type === 'frontend') {
-        switch(message.event) {
-        case 'getNodes':
-          console.log('la lista de nodos es: ');
-          var nodes_mapped = getNodes();
-          console.log(nodes_mapped);
-          ws.send(JSON.stringify({event: 'nodes', nodes: nodes_mapped}))
-          break;
-        case 'broadcast_to_frontends':
-          for (var key in frontends) {
-            frontends[key].send('mensaje broadcastado');
+      if(ws.node !== undefined) {
+        // switch (message.event) {
+        // case 'data':
+        //   if (message.timestamp === undefined)
+        //     message.timestamp = Date.now();
+        //   sockets.setSocketData(ws.socket, message.data, message.timestamp);
+        //   sockets.showSocketData(ws.socket);
+        //   break;
+        // default:
+        //   console.log('No se reconoció el evento');
+        // }
+        // switch (ws.type) {
+        // case 'node':
+        //   // nodes.sendEvent(event, ws.socket);
+        //   break;
+        // case 'frontend':
+        //   // frontends.sendEvent();
+        //   break;
+        // default:
+        //   console.log('No se detectó el tipo de socket');
+        // }n
+        if (ws.type === 'frontend') {
+          switch (message.event) {
+          case 'data':
+            break;
+          case 'getNodesInfo':
+            frontends.emit({event: 'nodesInfo', nodes: nodes.getNodesInfo()}, ws.node);
+            console.log('se solicito un nodesinfo de parte de un frontend');
+            break;
           }
-          break;
-        case 'data':
-          console.log('Se enviaron datos a un suscriptor');
-          console.log(message);
-          nodes[message.node].socket.send(message.data.toString());
-          break;
-        case 'subscribeTo':
-          if (nodes[message.node] === undefined)
-            nodes[message.node] = {subscribers: [], type: 'none'}
-          nodes[message.node].subscribers.push(ws);
-          ws.subscribedTo.push(message.node);
-          updateNodes();
-          break;
-        case 'unsubscribeFrom':
-          // console.log('Se desuscribió de %s', message.topic);
-          if (nodes[message.node] !== undefined) {
-            var index = nodes[message.node].subscribers.indexOf(ws);
-            if (index > -1) nodes[message.node].subscribers.splice(index, 1);
-            var index = ws.subscribedTo.indexOf(message.node);
-            if (index > -1) ws.subscribedTo.splice(index, 1);
-          }
-          updateNodes();
-          break;
-        default:
-          console.log('no se reconoció el evento');
+        } else if (ws.type === 'node') {
+          data.update(ws.node, message.data || message, message.timestamp || Date.now());
         }
-      }
-
-      switch(ws.type) {
-      case 'frontend':
-        console.log('Mensaje de FRONTEND');
-        break;
-      case 'subscriber':
-        console.log('Mensaje de SUBSCRIBER');
-        break;
-      case 'publisher':
-        var msg = {
-          event: 'data',
-          node: ws.node,
-          data: message.data,
-          timestamp: message.timestamp
-        };
-        msg = JSON.stringify(msg);
-        for (var key in nodes[ws.node].subscribers)
-          nodes[ws.node].subscribers[key].send(msg);
-        break;
-      default:
-        configure(message, ws, function error() {
-          console.log('es un socket no identificado, por favor identifiquese');
-        });
+      } else {
+        if (message.event === 'configure') {
+          if (message.type === 'node') {
+            nodes.createNode(message, ws);
+            data.create(message.node, message.pushableData);
+          } else if (message.type === 'frontend') {
+            frontends.createNode(message, ws);
+          }
+        }
       }
 
     });
 
     ws.on('close', function close(code, message) {
-      console.log('Se desconectó un socket');
-      if (ws.type === 'frontend') {
+      if (ws.type === 'node') {
+        console.log('Se desconectó un nodo');
+        nodes.clearNodeSocket(ws.node);
+      } else if (ws.type === 'frontend' ) {
         console.log('Se desconectó un frontend');
-        var index = frontends.indexOf(ws);
-        if (index > -1) frontends.splice(index, 1);
-        for (var key in ws.subscribedTo) {
-          var index = nodes[ws.subscribedTo[key]].subscribers.indexOf(ws);
-          if (index > -1) nodes[ws.subscribedTo[key]].subscribers.splice(index, 1);
-        }
-        updateNodes();
-      } else if (ws.type === 'publisher' || ws.type === 'subscriber') {
-        console.log('Se desconectó un publisher o suscriptor');
-        delete nodes[ws.node].socket;
-        updateNodes();
+        frontends.clearNodeSocket(ws.node);
+      } else {
+        console.log('No se reconoce el socket que se desconectó');
       }
     });
 

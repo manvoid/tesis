@@ -15,6 +15,7 @@ angular.module('generatorAngularFullstackApp')
     $scope.updateNodes = function () {
       // console.log('getTopics');
       Socket.updateNodes();
+      $scope.nodes = Socket.getNodes();
     };
 
     $scope.sendTopicsList = function () {
