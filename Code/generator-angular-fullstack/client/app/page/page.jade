@@ -1,0 +1,14 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+// .col-md-12
+//     | This is the page view.
+
+.container
+  .row
+    .col-md-12
+      div(ng-repeat="(key, widget) in pages[currentPage].widgets")
+        p.
+          #[strong Widget:] {{ key }} #[strong type:] {{ widget.type }} #[strong style:] {{ widget.style }}
+        p #[strong Connections]
+          div(ng-repeat="connection in widget.connections").
+            {{ data[connection.from.node][connection.from.name] }}

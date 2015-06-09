@@ -12,6 +12,8 @@ div.navbar.navbar-default.navbar-fixed-top(ng-controller='NavbarCtrl')
       ul.nav.navbar-nav
         li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
           a(ng-href='{{item.link}}') {{item.title}}
+        li(ng-repeat='(key, page) in pages', ng-class='{active: isActive("/page/"+key)}')
+          a(ng-href='{{"/page/"+key}}') {{page.title}}
       ul.nav.navbar-nav.navbar-right
         li
           a(href='#') {{socketState}}

@@ -10,15 +10,35 @@ div(ng-include='"components/navbar/navbar.html"')
   //     .btn.btn-default(ng-click='sendTopicsList()') List topics
   .row
     .col-md-12
-      h2 Lista de tópicos 
+      h2 Lista de nodos 
         small
           a(href="", ng-click="updateNodes()") actualizar
-  .row(ng-repeat="(name, node) in nodes")
+  .row(ng-repeat="(name, node) in nodes", style="float: left; width: 250px")
     p
       strong {{ name }}
-      | Tipo: {{ node.type }} Estado: {{ node.isConnected }}
-      | {{ node.pushableData }} 
-      | {{ node.pullableData }}
+    // p Tipo: {{ node.type }}
+    p Estado: {{ node.isConnected }}
+    p Manda: 
+      ul
+        li(ng-repeat="topic in node.pushableData")
+          a(href="", ng-click="listenTopic({node: node.node, name: topic})") {{ topic }}
+          p {{ data[topic] }}
+    p Recibe:
+      ul
+        li(ng-repeat="data in node.pullableData")
+          {{ data }}
+  .row
+    .col-md-12
+      h2 Lista de scripts 
+        small
+          a(href="", ng-click="updateScripts()") actualizar
+  .row(ng-repeat="(name, script) in scripts", style="float: left; width: 350px")
+    p
+      strong {{ name }}
+    // p Tipo: {{ script.type }}
+    p Estado: {{ script.isRunning }}
+    p Recibe de: {{ script.node }} y {{ script.data }}
+    p El dato es: {{ data[script.node][script.data].value }}
       // span(ng-if="node.type == 'publisher'")
       //   a(href="", ng-if="(node.pushableData == true)",ng-click="unsubscribeFrom(name)") Desuscribirse
       //   a(href="", ng-if="(node.pullableData != true)",ng-click="subscribeTo(name)") Suscribirse

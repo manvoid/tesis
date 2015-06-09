@@ -21,8 +21,13 @@ dataHandler.create = function (socket, data) {
     dataContainer[socket][data] = {};
     dataContainer[socket][data].value = 0;
     dataContainer[socket][data].timestamp = 0;
+    dataContainer[socket][data].listeners = [];
   });
   
+};
+
+dataHandler.addListener = function (socket, data, node) {
+  dataContainer[socket][data].listeners.push(node);
 };
 
 dataHandler.get = function (socket, data) {

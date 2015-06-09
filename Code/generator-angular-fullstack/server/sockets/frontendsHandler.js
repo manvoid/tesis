@@ -12,6 +12,13 @@ FrontendNode.prototype.send = function (msg) {
   }
 };
 
+FrontendNode.prototype.sendData = function (data) {
+  var msg = {
+    event: 'data',
+    data: data
+  };
+};
+
 FrontendNode.prototype.setSocket = function (ws) {
   this._ws = ws;
 };
@@ -63,13 +70,24 @@ frontendsHandler.setNodeSocket = function (node, ws) {
 
 frontendsHandler.emit = function (msg, node) {
   var event = msg.event;
-  switch (event) {
-  case 'nodesInfo':
-    frontends[node].send(msg);
-    break;
-  default:
-    break;
-  } 
+  frontends[node].send(msg);
+  // switch (event) {
+  // case 'nodesInfo':
+  //   frontends[node].send(msg);
+  //   break;
+  // default:
+  //   break;
+  // }
+};
+
+frontendsHandler.broadcast = function (msg) {
+  for (var node in frontends) {
+    frontends[node].send(msg)
+  }
+};
+
+frontendsHandler.sendDataToNode = function (node, data) {
+  
 };
 
 module.exports = frontendsHandler;

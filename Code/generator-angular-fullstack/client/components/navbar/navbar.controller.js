@@ -10,6 +10,9 @@ angular.module('generatorAngularFullstackApp')
       'link': '/amigos'
     }];
 
+    $scope.pages = Socket.pages;
+    $scope.currentPage;
+
     $scope.isCollapsed = true;
 
     var changeSocketState = function (state) {
@@ -40,5 +43,14 @@ angular.module('generatorAngularFullstackApp')
 
     $scope.isActive = function(route) {
       return route === $location.path();
+    };
+
+    $scope.isPageActive = function (page) {
+      return page === $location.path();
+    };
+
+    $scope.setCurrentPage = function (page) {
+      $scope.currentPage = page;
+      Socket.setCurrentPage(page);
     };
   });

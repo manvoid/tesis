@@ -27,10 +27,9 @@ class SocketClient(WebSocketClient):
 
     def publish(self, data, value = None):
         if (type(data) == str):
-            # msg = "{\"event\":\"data\",\"data\":{\"" + str(data) + "\":" + str(value) +"},\"timestamp\":" + str(time.time()) + "}"
-            msg = "{\"event\":\"data\",\"data\":{\"" + str(data) + "\":" + str(value) +"}}"
+            msg = "{\"" + str(data) + "\":" + str(value) +"}"
         elif (type(data) == dict):
-            msg = "{\"event\":\"data\",\"data\":{"
+            msg = "{"
             i = 1
             for key in data:
                 msg += "\"" + str(key) + "\":" + str(data[key])
@@ -38,8 +37,9 @@ class SocketClient(WebSocketClient):
                     msg += ","
                 i = i+1
             # msg += "},\"timestamp\":" + str(time.time()) + "}"
-            msg += "}}"
+            msg += "}"
         self.send(msg)
+        print msg
 
 if __name__ == '__main__':
     host = 'ws://localhost:9000'
@@ -56,9 +56,9 @@ if __name__ == '__main__':
 
     while True:
         # msg = "{\"event\":\"data\",\"encoder1\":" + str(random.random()) + ",\"timestamp\":" + str(time.time()) + "}"
-        client1.publish({"encoder1": random.random(), "encoder2": 10})
-        client2.publish('encoder3', 11)
-        time.sleep(2)
+        client1.publish({"encoder1": random.random(), "encoder2": random.random()})
+        client2.publish('encoder3', random.random()*100)
+        time.sleep(0.1)
             
     # try:
     #     wss = SubscriberClient('wssss', host)

@@ -7,6 +7,8 @@ angular.module('generatorAngularFullstackApp')
     $scope.publishersNames = [];
 
     $scope.nodes = Socket.nodes;
+    $scope.widgets = Socket.widgets;
+    $scope.data = Socket.data;
 
     $scope.echoTopics = function () {
       console.log(Socket.getTopics());
@@ -15,7 +17,19 @@ angular.module('generatorAngularFullstackApp')
     $scope.updateNodes = function () {
       // console.log('getTopics');
       Socket.updateNodes();
-      $scope.nodes = Socket.getNodes();
+      //$scope.nodes = Socket.getNodes();
+    };
+
+    $scope.createListenWidget = function (node, data) {
+      Socket.createListenWidget(node, data);
+    };
+
+    $scope.updateScripts = function () {
+      Socket.updateScripts();
+    };
+
+    $scope.listenTopic = function (topic) {
+      Socket.listenTopic(topic);
     };
 
     $scope.sendTopicsList = function () {
